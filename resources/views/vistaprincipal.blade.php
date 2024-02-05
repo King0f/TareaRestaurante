@@ -20,7 +20,7 @@
     <nav class="bg-gray-800 p-4 text-white">
         <div class="flex justify-between">
             <div>
-                <a href="./"><span class="text-xl font-bold">Nombre del Restaurante</span></a>
+                <a href="./"><span class="text-xl font-bold">Nombre del Restaurante Holaaaa</span></a>
             </div>
             <div class="flex space-x-4">
                 @guest
