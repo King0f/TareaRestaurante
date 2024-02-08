@@ -23,7 +23,7 @@ Route::post('/funcionTarjetas', [ControladorGeneral::class, 'funcionTarjetas'])-
 /* El fragmento de código define rutas para una aplicación web que utiliza el marco Laravel. */
 Route::get('/', function () {
 
-    return view('vistaprincipal');
+    return view('welcome');
 });
 
 Route::get('principal', function () {
