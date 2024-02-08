@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 
 function Register() {
     /* El código  está usando el Gancho `useState` en React para crear una variable de estado llamada `formData` 
@@ -136,7 +136,7 @@ function Register() {
               </button>
             </form>
             <div className="mt-4 text-white text-center">
-              ¿Ya tienes cuenta? {/* <Link to="/login" className="text-blue-500">Inicia sesión aquí.</Link> */}
+              ¿Ya tienes cuenta? <Link to="/login" className="text-blue-500">Inicia sesión aquí.</Link>
             </div>
           </div>
         </div>
