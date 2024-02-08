@@ -17,6 +17,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@vitejs/plugin-react": "^4.2.1",
         "fullcalendar": "^6.1.9",
         "swiper": "^11.0.4"
     }
