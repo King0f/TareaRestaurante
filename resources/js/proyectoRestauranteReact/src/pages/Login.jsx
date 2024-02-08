@@ -42,7 +42,7 @@ function Login() {
    /* La línea `const url = "http://localhost/TareaRestaurante2/public/api/login";` está asignando la
    URL del punto final de la API de inicio de sesión a la variable `url`. Esta URL es la dirección
    donde se enviará la solicitud de inicio de sesión al servidor. */
-    const url = "/api/login";
+/*     const url = "/api/login"; */
 
     /* El código "fetch(url, opciones)" realiza una solicitud HTTP a la "url" especificada con las
     "opciones" dadas. */
