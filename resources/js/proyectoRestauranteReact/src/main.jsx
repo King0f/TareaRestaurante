@@ -16,17 +16,17 @@ import './index.css'
  * La función AppLayout devuelve un componente de diseño con un componente Outlet y un componente
  * Footer.
  */
-function AppLayout() {
+/* function AppLayout() {
   return <>
   <Outlet />
   <Footer />
   </>
-}
+} */
 
 /* La declaración `const router = createBrowserRouter([...])` está creando una configuración de
 enrutador para la aplicación React usando la función `createBrowserRouter` de la biblioteca
 `react-router-dom`. */
-const router = createBrowserRouter([
+/* const router = createBrowserRouter([
   {
     element: <AppLayout />,
     errorElement: <PaginaError />,
@@ -43,10 +43,11 @@ const router = createBrowserRouter([
       element: <Register/>,
     }]
   }
-]);
+]); */
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
-    <RouterProvider router={router} />
+   /*  <RouterProvider router={router} /> */
+   <App/>
   //</React.StrictMode>,
 )
