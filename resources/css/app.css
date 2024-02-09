@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+@import 'variables';
+
+@import 'bootstrap/scss/bootstrap';
