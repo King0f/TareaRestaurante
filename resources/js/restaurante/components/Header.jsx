@@ -13,11 +13,11 @@ export const Header = ({}) => {
     <nav className="bg-gray-700  bg-opacity-5  p-4 text-white font-mono custom-nav">
         <div className="flex justify-between ">
           <div>
-            <Link to="/"><span className="text-3xl font-bold shadow">Los Cuatro Sentidos</span></Link>
+            <Link to="/restaurante"><span className="text-3xl font-bold shadow">Los Cuatro Sentidos</span></Link>
           </div>
           <div className="flex space-x-4">
-            <Link to="/login" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Login</Link>
-            <Link to="/register" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Register</Link>
+            <Link to="/restaurante/login" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Login</Link>
+            <Link to="/restaurante/register" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Register</Link>
             <a href="#" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Realizar una reserva</a>
           </div>
         </div>
