@@ -6,7 +6,7 @@ import Register from './pages/Register'
 import './App.css'
 
 function App() {
-  const path = 'proyectoRestauranteReact/src'  
+  const path = 'proyectoRestauranteReact'  
 
   return (
     <>
