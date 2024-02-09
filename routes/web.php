@@ -17,8 +17,8 @@ use App\Http\Controllers\FormularioController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Auth::routes();
-Route::post('/funcionTarjetas', [ControladorGeneral::class, 'funcionTarjetas'])->name("funcionTarjetas");
+/* Auth::routes();
+Route::post('/funcionTarjetas', [ControladorGeneral::class, 'funcionTarjetas'])->name("funcionTarjetas"); */
 
 /* El fragmento de código define rutas para una aplicación web que utiliza el marco Laravel. */
 Route::get('/', function () {
@@ -26,7 +26,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('principal', function () {
+/* Route::get('principal', function () {
 
     return view('vistaprincipal');
 });
@@ -49,6 +49,6 @@ Route::get('/mi-cuenta', [MiCuentaController::class, 'index'])->name('mi-cuenta'
 Route::get('/añadir-tarjeta', [MiCuentaController::class, 'mostrarFormularioTarjeta'])->name('añadir-tarjeta');
 Route::post('/guardar-tarjeta', [MiCuentaController::class, 'guardarTarjeta'])->name('guardar-tarjeta');
 Route::get('/mis-reservas', [ReservaController::class, 'mostrarMisReservas'])->name('mis-reservas');
-
+ */
 
 
