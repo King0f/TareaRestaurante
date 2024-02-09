@@ -2,8 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\ReservasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/reservas', [ReservasController::class, 'mostrarReservas'])->middleware('auth:sanctum');
-Route::post('/reservas', [ReservasController::class, 'crearReserva'])->middleware('auth:sanctum'); 
-Route::put('/reservas/{id}', [ReservasController::class, 'actualizarReserva']);
-Route::delete('/reservas/{id}', [ReservasController::class, 'borrarReserva'])->middleware('auth:sanctum');
-Route::post('/register', [AuthController::class, 'createUser']);
-Route::post('/login', [AuthController::class, 'loginUser']);
+Route::get('/prueba', function(){
+    return response()->json([
+        "mensaje" => "TODO OK"
+    ]);
+});
