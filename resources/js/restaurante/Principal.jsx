@@ -54,6 +54,7 @@ function Principal() {
           </div>
         </div>
       </div>
+      <Footer />
       </>
     )
   }
