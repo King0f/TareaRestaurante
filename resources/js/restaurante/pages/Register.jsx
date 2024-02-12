@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 function Register() {
     /* El código  está usando el Gancho `useState` en React para crear una variable de estado llamada `formData` 
@@ -13,6 +13,7 @@ function Register() {
     password: "",
     });
 
+    const navigate = useNavigate();
    /**
    * La función `handleInputChange` se utiliza para actualizar el objeto `formData` con el nuevo valor
    * del campo de entrada que desencadenó el evento.
@@ -58,7 +59,7 @@ function Register() {
       .then(resultado => {
         if(resultado.token) {
           localStorage.setItem('token', resultado.token); // Guarda el token en localStorage
-          history.push('/restaurante'); // Redirige al inicio
+           navigate('/restaurante'); // Redirige al inicio usando navigate
         }
       })
       .catch(err => console.log(err));
