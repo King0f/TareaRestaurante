@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   /* La línea usa el gancho `useState` en React para crear una variable de estado llamada `formData` y una función
@@ -8,6 +8,8 @@ function Login() {
     email: "",
     password: "",
   });
+  
+  const navigate = useNavigate();
 
   /**
    * La función `handleInputChange` se utiliza para actualizar el objeto `formData` con el nuevo valor
