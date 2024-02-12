@@ -48,7 +48,12 @@ function Login() {
     "opciones" dadas. */
     fetch(url, options)
       .then(response => response.json())
-      .then(resultado => console.log(resultado.token))
+      .then(resultado => {
+        if(resultado.token) {
+          localStorage.setItem('token', resultado.token); 
+           navigate('/restaurante'); 
+        }
+      })
       .catch(err => console.log(err));
   };
 
