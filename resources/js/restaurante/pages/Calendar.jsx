@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-const localizer = momentLocalizer(moment);
 
 function Calendar () {
-    /* const [events, setEvents] = useState([]);
+    const localizer = momentLocalizer(moment);
+    const [events, setEvents] = useState([]);
 
     useEffect(() => {
       // Reemplaza esta URL por la ruta de tu API
@@ -19,16 +19,16 @@ function Calendar () {
           }));
           setEvents(mappedEvents);
         });
-    }, []); */
+    }, []);
   
     return (
       <div style={{ height: 700 }}>
-        {/* <Calendar
+        <Calendar
           localizer={localizer}
           events={events}
           startAccessor="start"
-          style={{ height: 500 }} */}
-        {/* /> */}
+          style={{ height: 500 }}
+         /> 
         <h1>AAAAAAAAAAAAAA</h1>
       </div>
     );
