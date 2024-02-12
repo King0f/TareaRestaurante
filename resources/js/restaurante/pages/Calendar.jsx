@@ -1,11 +1,11 @@
-import React/* , { useState, useEffect } */ from 'react';
-/* import { Calendar, momentLocalizer } from 'react-big-calendar'; */
-/* import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css'; */
-/* 
-const localizer = momentLocalizer(moment); */
+import React, { useState, useEffect } from 'react';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+
+const localizer = momentLocalizer(moment);
 function Calendar () {
-    /* const [events, setEvents] = useState([]);
+    const [events, setEvents] = useState([]);
 
   useEffect(() => {
     fetch('/api/eventosCalendario') // Ajusta esta URL a la ruta de tu API
@@ -23,11 +23,11 @@ function Calendar () {
         });
         setEvents(mappedEvents);
       });
-  }, []); */
+  }, []);
 
   return (<>
     <h1> Me cagoooooooo </h1>
-    {/* <div style={{ height: '100vh' }}>
+    <div style={{ height: '100vh' }}>
       <Calendar
         localizer={localizer}
         events={events}
@@ -35,7 +35,7 @@ function Calendar () {
         endAccessor="end"
         style={{ height: '100%' }}
       />
-    </div> */}
+    </div>
     </>
   );
 }
