@@ -1,44 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
-const localizer = momentLocalizer(moment);
-function Calenndar () {
+function Calenndar() {
     const [events, setEvents] = useState([]);
 
-  useEffect(() => {
-    fetch('/api/eventosCalendario') // Ajusta esta URL a la ruta de tu API
-      .then((response) => response.json())
-      .then((data) => {
-        const mappedEvents = data.map((event) => {
-          const eventStart = new Date(event.Dias_Disponibles); // Asume 'fechaInicio' es una fecha 
-          const end = new Date(event.Horas_Disponibles)
-          return {
-            ...event,
-            start: eventStart,
-            end: moment(end).add(24, 'hours').toDate(), 
-            title: `${moment(end)}`, // Combina la hora y el título
-          };
-        });
-        setEvents(mappedEvents);
-      });
-  }, []);
+    useEffect(() => {
+        // Asume que tienes una función para obtener los eventos desde tu backend
+        fetchEvents().then((events) => {
+            const formattedEvents = events.map((event) => ({
+                title: event.Horas_Disponibles, 
+                start: event.Dias_Disponibles, // '2024-02-14' por ejemplo, FullCalendar interpretará correctamente esta cadena
+                url: "formulario2/" + event.Dias_Disponibles + "/" + event.Horas_Disponibles 
+            }));
 
-  return (
-  <>
-    <h1> Me cagoooooooo </h1>
-    <div style={{ height: '100vh' }}>
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: '100%' }}
-      />
-    </div>
-    </>
-  );
+            setEvents(formattedEvents);
+        });
+    }, []);
+
+    return (
+        <FullCalendar
+            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            initialView="dayGridMonth"
+            events={events}
+            // Puedes habilitar otras opciones aquí, como manejadores de eventos, etc.
+        />
+    );
 }
 
-export default Calenndar
+async function fetchEvents() {
+    // Implementa la lógica de fetching de tus eventos aquí,
+    // por ejemplo, usando fetch para obtener los datos de tu API.
+    const response = await fetch('/api/eventosCalendario');
+    const data = await response.json();
+    return data;
+}
+
+export default Calenndar;
