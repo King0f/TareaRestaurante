@@ -4,7 +4,7 @@ import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 const localizer = momentLocalizer(moment);
-function Calendar () {
+function Calenndar () {
     const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -41,4 +41,4 @@ function Calendar () {
   );
 }
 
-export default Calendar
+export default Calenndar

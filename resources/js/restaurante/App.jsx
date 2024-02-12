@@ -3,7 +3,7 @@ import {Routes, Route } from "react-router-dom";
 import Principal from './Principal'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Calendar from './pages/Calendar'
+import Calendar from './pages/Calenndar'
 
 import './App.css'
 
