@@ -9,7 +9,7 @@ function Principal() {
     const [buttonHovered, setButtonHovered] = useState(false);
     return (
       <>
-        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('./imagenes/foton.jpg')" }}>
+        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('imagenes/foton.jpg')" }}>
         <Header/>
         <div className="flex flex-col items-center justify-center pb-36 h-full text-white">
           <h1 className="text-xl font-bold mt-8 mb-4 shadow1 text-zinc-200">Restaurante</h1>
@@ -29,7 +29,7 @@ function Principal() {
       <div className="relative h-screen bg-cover bg-center bg-gray-900 text-white p-6">
         <div className="flex items-center justify-center ml-16">
           <img
-            src="./imagenes/plato.jpg"
+            src="imagenes/plato.jpg"
             alt="Restaurante"
             className={`w-3/4 h-auto mr-8 rounded-lg mt-40 ${hovered ? 'hovered' : ''}`}
             style={{ maxWidth: '100%', maxHeight: '100%' }}
