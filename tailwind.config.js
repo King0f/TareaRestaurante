@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.jsx"
+    "./resources/js/restaurante/**/*.jsx"
   ],
   theme: {
     extend: {
