@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ReservasController;
+use App\Http\Controllers\ControladorGeneral;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::put('/reservas/{id}', [ReservasController::class, 'actualizarReserva']);
 Route::delete('/reservas/{id}', [ReservasController::class, 'borrarReserva'])->middleware('auth:sanctum');
 Route::post('/register', [AuthController::class, 'createUser']);
 Route::post('/login', [AuthController::class, 'loginUser']);
+
+Route::get('/eventosCalendario', [ControladorGeneral::class, 'mostrarCalendario']);

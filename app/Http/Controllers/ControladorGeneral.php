@@ -27,6 +27,6 @@ public function mostrarCalendario()
     })->get();
 
     // Retorna la vista del calendario, pasando los eventos disponibles
-    return view('calendario', compact('event'));
+    return response()->json($event);
 }
 }
