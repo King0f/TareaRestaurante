@@ -25,7 +25,8 @@ function Calendar () {
       });
   }, []);
 
-  return (<>
+  return (
+  <>
     <h1> Me cagoooooooo </h1>
     <div style={{ height: '100vh' }}>
       <Calendar
