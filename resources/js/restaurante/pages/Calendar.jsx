@@ -3,35 +3,39 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
+const localizer = momentLocalizer(moment);
 function Calendar () {
-    const localizer = momentLocalizer(moment);
     const [events, setEvents] = useState([]);
 
-    useEffect(() => {
-      // Reemplaza esta URL por la ruta de tu API
-      fetch('/api/eventosCalendario')
-        .then((response) => response.json())
-        .then((data) => {
-          const mappedEvents = data.map((event) => ({
+  useEffect(() => {
+    fetch('/api/eventosCalendario') // Ajusta esta URL a la ruta de tu API
+      .then((response) => response.json())
+      .then((data) => {
+        const mappedEvents = data.map((event) => {
+          const eventStart = new Date(event.Dias_Disponibles); // Asume 'fechaInicio' es una fecha 
+          const end = new Date(event.Horas_Disponibles)
+          return {
             ...event,
-            start: new Date(event.Dias_Disponibles), // Asume que tu objeto tiene una propiedad 'fechaInicio'
-            title: event.Horas_Disponibles, // Asume que tu objeto tiene una propiedad 'titulo'
-          }));
-          setEvents(mappedEvents);
+            start: eventStart,
+            end: moment(end).add(24, 'hours').toDate(), 
+            title: `${moment(end)}`, // Combina la hora y el título
+          };
         });
-    }, []);
-  
-    return (
-      <div style={{ height: 700 }}>
-        <Calendar
-          localizer={localizer}
-          events={events}
-          startAccessor="start"
-          style={{ height: 500 }}
-         /> 
-        <h1>AAAAAAAAAAAAAA</h1>
-      </div>
-    );
+        setEvents(mappedEvents);
+      });
+  }, []);
+
+  return (
+    <div style={{ height: '100vh' }}>
+      <Calendar
+        localizer={localizer}
+        events={events}
+        startAccessor="start"
+        endAccessor="end"
+        style={{ height: '100%' }}
+      />
+    </div>
+  );
 }
 
 export default Calendar
