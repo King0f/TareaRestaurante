@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./resources/js/restaurante/*.jsx",
-    "./resources/js/restaurante/**/*.jsx",
+    "./index.html",
+    "./src/**/*.jsx"
   ],
   theme: {
     extend: {
