@@ -20,8 +20,8 @@ export const Header = ({}) => {
           </div>
           <div className="flex space-x-4">
             <Link to="/restaurante/login" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Mis Reservas</Link>
+            <Link to="/restaurante/calendarioReservas" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Realizar una reserva</Link>
             <Link to="/restaurante/register" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Cuenta</Link>
-            <a href="#" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Realizar una reserva</a>
           </div>
         </div>
     </nav>

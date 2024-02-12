@@ -3,6 +3,7 @@ import {Routes, Route } from "react-router-dom";
 import Principal from './Principal'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Calendar from './pages/Calendar'
 
 import './App.css'
 
@@ -25,6 +26,7 @@ function App() {
         <Route path={path} element={<Principal />}></Route>
         <Route path={path +'/login' } element={<Login />}></Route>
         <Route path={path +'/register' } element={<Register />}></Route>
+        <Route path={path +'/calendarioReservas' } element={<Calendar />}></Route>
       </Routes>
 
     </>
