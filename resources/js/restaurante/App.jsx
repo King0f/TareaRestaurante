@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import {Routes, Route } from "react-router-dom";
 import Principal from './Principal'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import Reservas from './Reservas'
 
 import './App.css'
 
@@ -23,10 +22,8 @@ function App() {
     <>
       <Routes>
         <Route path={path} element={<Principal />}></Route>
-        <Route path={path +'/login' } element={<Login />}></Route>
-        <Route path={path +'/register' } element={<Register />}></Route>
+        <Route path={path +'/reservas' } element={<Reservas />}></Route>
       </Routes>
-
     </>
   )
 }
