@@ -136,7 +136,7 @@ function Register() {
               </button>
             </form>
             <div className="mt-4 text-white text-center">
-              ¿Ya tienes cuenta? <Link to="/login" className="text-blue-500">Inicia sesión aquí.</Link>
+              ¿Ya tienes cuenta? <Link to="/restaurante/login" className="text-blue-500">Inicia sesión aquí.</Link>
             </div>
           </div>
         </div>
