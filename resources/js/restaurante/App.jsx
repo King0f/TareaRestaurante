@@ -8,7 +8,6 @@ import Calendar from './pages/Calendar'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   useEffect(() => {
     fetch('/api/prueba')

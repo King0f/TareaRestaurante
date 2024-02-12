@@ -29,6 +29,7 @@ function Calendar () {
           startAccessor="start"
           style={{ height: 500 }}
         />
+        <h1>AAAAAAAAAAAAAA</h1>
       </div>
     );
 }
