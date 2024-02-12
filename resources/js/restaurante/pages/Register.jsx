@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 
 function Register() {
     /* El código  está usando el Gancho `useState` en React para crear una variable de estado llamada `formData` 
@@ -54,9 +54,14 @@ function Register() {
   
       /* El código está realizando una solicitud POST a la URL especificada con las opciones proporcionadas. */
       fetch(url, options)
-        .then(response => response.json())
-        .then(resultado => console.log(resultado.token))
-        .catch(err => console.log(err));
+      .then(response => response.json())
+      .then(resultado => {
+        if(resultado.token) {
+          localStorage.setItem('token', resultado.token); // Guarda el token en localStorage
+          history.push('/restaurante'); // Redirige al inicio
+        }
+      })
+      .catch(err => console.log(err));
     };
   
     return (
