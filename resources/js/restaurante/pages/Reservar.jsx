@@ -8,6 +8,8 @@ function Reservar() {
   let { fecha, hora } = useParams();
   const isLoggedIn = !!localStorage.getItem('token');
   const [user, setUser] = useState();
+  const [n_personas, setPersonas] = useState();
+  const [menu, setMenu] = useState();
   const [tarjetas, setTarjetas] = useState([]);
   const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState('');
   if (isLoggedIn) {
@@ -74,6 +76,73 @@ function Reservar() {
     {isLoggedIn ? (
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-[80rem]">
+      <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos de la reserva</h2>
+        <form>
+          <div className="mb-4">
+            <label htmlFor="Nº_Personas" className="block text-gray-700 text-sm font-bold mb-2">
+              Nº de personas para la reserva:
+            </label>
+            <input
+              type="number"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="Nº_Personas"
+              name="Nº_Personas"
+              placeholder= "Inserte el número de personas de la reserva"
+              onChange={(e) => setPersonas(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
+              Seleccione una menú para todos los comensales:
+            </label>
+            <select
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="tarjeta"
+              name="tarjeta"
+              onChange={(e) => setMenu(e.target.value)}
+            >
+              <option value="">Seleccione un menú</option>
+              <option value="menu1">Menu 1 - Sensaciones encontradas</option>
+              <option value="menu2">Menu 2 - Todas las emociones</option>
+            </select>
+          </div>
+          <div className="mb-4">
+            <label htmlFor="menu" className="block text-gray-700 text-sm font-bold mb-2">
+              Seleccione una menú para todos los comensales:
+            </label>
+            <select
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="menu"
+              name="menu"
+              onChange={(e) => setMenu(e.target.value)}
+            >
+              <option value="">Seleccione un menú</option>
+              <option value="menu1">Menu 1 - Sensaciones encontradas</option>
+              <option value="menu2">Menu 2 - Todas las emociones</option>
+            </select>
+          </div>
+          <div className="mb-4">
+            <label htmlFor="mesa" className="block text-gray-700 text-sm font-bold mb-2">
+              Seleccione la mesa en la que desea comer:
+            </label>
+            <select
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="mesa"
+              name="mesa"
+              onChange={(e) => setMesa(e.target.value)}
+            >
+              <option value="">Seleccione la mesa</option>
+              <option value="1">Mesa 1</option>
+              <option value="2">Mesa 2</option>
+              <option value="3">Mesa 3</option>
+              <option value="4">Mesa 4</option>
+              <option value="5">Mesa 5</option>
+              <option value="6">Mesa 6</option>
+              <option value="7">Mesa 7</option>
+              <option value="8">Mesa 8</option>
+            </select>
+          </div>
+        </form>
         <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos del Usuario</h2>
         <form>
           <div className="mb-4">
