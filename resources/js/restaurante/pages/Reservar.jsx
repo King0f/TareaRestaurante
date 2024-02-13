@@ -107,21 +107,6 @@ function Reservar() {
             </select>
           </div>
           <div className="mb-4">
-            <label htmlFor="menu" className="block text-gray-700 text-sm font-bold mb-2">
-              Seleccione una menú para todos los comensales:
-            </label>
-            <select
-              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="menu"
-              name="menu"
-              onChange={(e) => setMenu(e.target.value)}
-            >
-              <option value="">Seleccione un menú</option>
-              <option value="menu1">Menu 1 - Sensaciones encontradas</option>
-              <option value="menu2">Menu 2 - Todas las emociones</option>
-            </select>
-          </div>
-          <div className="mb-4">
             <label htmlFor="mesa" className="block text-gray-700 text-sm font-bold mb-2">
               Seleccione la mesa en la que desea comer:
             </label>
