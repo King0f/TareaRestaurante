@@ -4,7 +4,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import Header2 from '../components/Header2'
+import { Header2 } from '../components/Header2'
 
 function Calenndar() {
     const [events, setEvents] = useState([]);
