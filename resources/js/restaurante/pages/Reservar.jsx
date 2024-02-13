@@ -71,24 +71,49 @@ const handleChange = (e) => {
   return (
     <>
     {isLoggedIn ? (
-    <div>
-      <h2>Perfil del Usuario</h2>
-      <p>Fecha: {fecha}</p>
-      <p>Hora: {hora}</p>
-      <p>Nombre: {user.name}</p>
-      <select
-          id="tarjeta"
-          name="tarjeta"
-          value={tarjetaSeleccionada}
-          onChange={handleChange}
-        >
-          <option value="">Seleccione una tarjeta</option>
-          {tarjetas.map((tarjeta) => (
-            <option key={tarjeta.id} value={tarjeta.id}>
-              {tarjeta.Nº_Tarjeta}
-            </option>
-          ))}
-        </select>
+      <div className="min-h-screen bg-gray-900 flex justify-center items-center">
+      <div className="bg-white p-8 rounded-lg shadow-md w-96">
+        <form>
+          <div className="mb-4">
+            <label htmlFor="nombre" className="block text-gray-700 text-sm font-bold mb-2">
+              Nombre
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="nombre"
+              name="nombre"
+              value={user.name}
+              placeholder={user.name}
+              readonly
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
+              Seleccione una tarjeta
+            </label>
+            <select
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="tarjeta"
+              name="tarjeta"
+              value={tarjetaSeleccionada}
+              onChange={(e) => setTarjetaSeleccionada(e.target.value)}
+            >
+              <option value="">Seleccione una tarjeta</option>
+              {tarjetas.map((tarjeta) => (
+                <option key={tarjeta.id} value={tarjeta.id}>
+                  {tarjeta.Nº_Tarjeta}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex items-center justify-between">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
     ) : (
         <h1>hola</h1>
