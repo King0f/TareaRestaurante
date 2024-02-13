@@ -75,7 +75,7 @@ const handleChange = (e) => {
     <Header />
     {isLoggedIn ? (
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
+      <div className="bg-white p-8 rounded-lg shadow-md w-[32rem]">
         <form>
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-gray-700 text-sm font-bold mb-2">
