@@ -105,6 +105,48 @@ function Reservar() {
             />
           </div>
           <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+              Email:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              name="email"
+              value={user.email}
+              placeholder={user.email}
+              readOnly
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="telefono" className="block text-gray-700 text-sm font-bold mb-2">
+              Teléfono:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="telefono"
+              name="telefono"
+              value={user.telefono}
+              placeholder={user.telefono}
+              readOnly
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="alergias" className="block text-gray-700 text-sm font-bold mb-2">
+              Alergias:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="alergias"
+              name="alergias"
+              value={user.alergias}
+              placeholder={user.alergias}
+              readOnly
+            />
+          </div>
+          <div className="mb-4">
             <label htmlFor="tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
               Seleccione una tarjeta:
             </label>
