@@ -77,7 +77,7 @@ function Login() {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="block text-white text-sm font-medium mb-2">Contraseña:</label>
+              <label htmlFor="password" className="block text-white text-sm font-medium mb-2">Contraseñaa:</label>
               <input
                 type="password"
                 id="password"
