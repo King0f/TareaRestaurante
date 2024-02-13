@@ -106,11 +106,9 @@ class ReservasController extends Controller
 
     }
 
-    public function obtenerDatosUsuario($id)
+    public function obtenerDatosUsuario(Request $request)
     {
-         $token = Token::where('token',$id);
-         $idUsuario = $token->tokenable_id;
-         $usuario = User::find($idUsuario);
+         $usuario = $request->user();
          return response()->json($usuario);
     }
 

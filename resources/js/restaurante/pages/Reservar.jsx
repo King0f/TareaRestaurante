@@ -10,12 +10,31 @@ function Reservar() {
     useEffect(() => {
       const obtenerDatosUsuario = async () => {
         const token = localStorage.getItem('token');
-        const response = await fetch('/api/obtenerDatosUsuario/' + token);
+        
+        const headers = new Headers({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` 
+        });
+  
+        const response = await fetch('/api/obtenerDatosUsuario', {
+          method: 'GET', 
+          headers: headers, 
+        });
+  
+        if (!response.ok) {
+          throw new Error('La petición falló o el token no es válido');
+        }
+  
         const data = await response.json();
+        return data;
+      };
+  
+      obtenerDatosUsuario().then(data => {
         setUser(data)
-      }
-      obtenerDatosUsuario()
-  }, []);
+      }).catch(error => {
+        console.error('Error al obtener datos del usuario:', error);
+      });
+    }, []); // Dependencias del efecto, si necesitas que se ejecute más de una vez, ajusta esto.
   }
   if (!user) {
     return <p>Cargando detalles del usuario...</p>;

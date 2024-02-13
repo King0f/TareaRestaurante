@@ -29,4 +29,4 @@ Route::post('/register', [AuthController::class, 'createUser']);
 Route::post('/login', [AuthController::class, 'loginUser']);
 
 Route::get('/eventosCalendario', [ControladorGeneral::class, 'mostrarCalendario']);
-Route::get('/obtenerDatosUsuario/{token}', [ReservasController::class, 'obtenerDatosUsuario']);
+Route::get('/obtenerDatosUsuario', [ReservasController::class, 'obtenerDatosUsuario'])->middleware('auth:sanctum');
