@@ -110,7 +110,7 @@ class ReservasController extends Controller
     {
          $token = Token::where('token',$id);
          $idUsuario = $token->tokenable_id;
-         $usuario = User::where('id',$idUsuario);
+         $usuario = User::find($idUsuario);
          return response()->json($usuario);
     }
 
