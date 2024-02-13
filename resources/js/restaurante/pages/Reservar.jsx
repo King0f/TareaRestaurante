@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import { Header } from "../components/Header";
+import { Header2 } from "../components/Header2";
 import { Footer } from "../components/Footer";
 
 
@@ -70,7 +70,7 @@ function Reservar() {
 
   return (
     <>
-    <Header />
+    <Header2 />
     {isLoggedIn ? (
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-[80rem]">
