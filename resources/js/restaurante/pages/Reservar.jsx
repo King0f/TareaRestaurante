@@ -67,15 +67,13 @@ function Reservar() {
     return <p>Cargando detalles del usuario...</p>;
   }
 }
-const handleChange = (e) => {
-  setTarjetaSeleccionada(e.target.value);
-};
+
   return (
     <>
     <Header />
     {isLoggedIn ? (
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-[32rem]">
+      <div className="bg-white p-8 rounded-lg shadow-md w-[64rem]">
         <form>
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-gray-700 text-sm font-bold mb-2">
