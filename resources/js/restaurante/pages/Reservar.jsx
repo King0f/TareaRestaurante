@@ -1,10 +1,11 @@
-import { useParams } from 'react-router-dom';
 import React, { useState } from "react";
+import { useParams } from 'react-router-dom';
+
 
 function Reservar() {
   let { fecha, hora } = useParams();
   const isLoggedIn = !!localStorage.getItem('token');
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState();
   if (isLoggedIn) {
     useEffect(() => {
       const obtenerDatosUsuario = async () => {
