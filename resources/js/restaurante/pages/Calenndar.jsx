@@ -10,10 +10,10 @@ function Calenndar() {
     useEffect(() => {
         // Asume que tienes una función para obtener los eventos desde tu backend
         fetchEvents().then((events) => {
-            const formattedEvents = events.map((event) => ({
+            const formattedEvents = events.map((event) => ({ 
                 title: event.Horas_Disponibles, 
                 start: event.Dias_Disponibles, 
-                url: `/restaurante/realizarReserva/${event.Dias_Disponibles}/${event.Horas_Disponibles}`
+                url: `/realizarReserva/${event.Dias_Disponibles}/${event.Horas_Disponibles}`
             }));
 
             setEvents(formattedEvents);
