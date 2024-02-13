@@ -4,6 +4,7 @@ import Principal from './Principal'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Calenndar from './pages/Calenndar'
+import Reservar from './pages/Reservar';
 
 import './App.css'
 
@@ -26,7 +27,7 @@ function App() {
         <Route path={path +'/login' } element={<Login />}></Route>
         <Route path={path +'/register' } element={<Register />}></Route>
         <Route path={path +'/calendarioReservas' } element={<Calenndar />}></Route>
-        <Route path={path +'/realizarReserva/:fecha/:hora'} element={<DetalleUsuario />}></Route>
+        <Route path={path +'/realizarReserva/:fecha/:hora'} element={<Reservar />}></Route>
       </Routes>
 
     </>
