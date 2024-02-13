@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Reserva;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Token;
 use Illuminate\Support\Facades\Auth;
 
 class ReservasController extends Controller
@@ -103,6 +104,14 @@ class ReservasController extends Controller
         $user = User::find(2);
         return $user->createToken("lsmfnlsmflmsf")->plainTextToken; 
 
+    }
+
+    public function obtenerDatosUsuario($id)
+    {
+         $token = Token::where('token',$id);
+         $idUsuario = $token->tokenable_id;
+         $usuario = User::where('id',$idUsuario);
+         return response()->json($usuario);
     }
 
 }
