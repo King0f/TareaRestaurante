@@ -78,7 +78,7 @@ function Reservar() {
         <form>
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-gray-700 text-sm font-bold mb-2">
-              Nombre
+              Nombre:
             </label>
             <input
               type="text"
@@ -87,12 +87,26 @@ function Reservar() {
               name="nombre"
               value={user.name}
               placeholder={user.name}
-              readonly
+              readOnly
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="apellidos" className="block text-gray-700 text-sm font-bold mb-2">
+              Apellidos:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="apellido"
+              name="apellido"
+              value={user.apellido}
+              placeholder={user.apellido}
+              readOnly
             />
           </div>
           <div className="mb-4">
             <label htmlFor="tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
-              Seleccione una tarjeta
+              Seleccione una tarjeta:
             </label>
             <select
               className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
