@@ -17,6 +17,9 @@ function Reservar() {
       obtenerDatosUsuario()
   }, []);
   }
+  if (!user) {
+    return <p>Cargando detalles del usuario...</p>;
+  }
   return (
     <>
     {isLoggedIn ? (
