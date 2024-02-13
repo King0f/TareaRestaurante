@@ -54,7 +54,11 @@ function Reservar() {
         console.error('Error al obtener datos del usuario:', error);
       });
 
-      cargarTarjetas();
+      cargarTarjetas().then(data => {
+        setTarjetas(data)
+      }).catch(error => {
+        console.error('Error al obtener las tarjetas:', error);
+      });
     }, []); 
 
   if (!user) {
