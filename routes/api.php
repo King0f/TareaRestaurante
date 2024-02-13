@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ReservasController;
 use App\Http\Controllers\ControladorGeneral;
+use App\Http\Controllers\MiCuentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,4 @@ Route::post('/login', [AuthController::class, 'loginUser']);
 
 Route::get('/eventosCalendario', [ControladorGeneral::class, 'mostrarCalendario']);
 Route::get('/obtenerDatosUsuario', [ReservasController::class, 'obtenerDatosUsuario'])->middleware('auth:sanctum');
+Route::get('/obtenerTarjetas', [MiCuentaController::class, 'index'])->middleware('auth:sanctum');;

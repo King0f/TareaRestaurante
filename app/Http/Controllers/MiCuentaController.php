@@ -9,11 +9,11 @@ use Illuminate\Validation\Rule;
 
 class MiCuentaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $user = Auth::user();
+        $user = $request->user();
         $tarjetas = $user->tarjetas;
-        return view('mi-cuenta', compact('user', 'tarjetas'));
+        return response()->json($tarjetas);
 
     }
     public function mostrarFormularioTarjeta()
