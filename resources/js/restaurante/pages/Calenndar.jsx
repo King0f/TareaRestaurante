@@ -13,7 +13,7 @@ function Calenndar() {
             const formattedEvents = events.map((event) => ({
                 title: event.Horas_Disponibles, 
                 start: event.Dias_Disponibles, // '2024-02-14' por ejemplo, FullCalendar interpretará correctamente esta cadena
-                url: "formulario2/" + event.Dias_Disponibles + "/" + event.Horas_Disponibles 
+                url: "/realizarReserva/" + event.Dias_Disponibles + "/" + event.Horas_Disponibles 
             }));
 
             setEvents(formattedEvents);

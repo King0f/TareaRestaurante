@@ -26,6 +26,7 @@ function App() {
         <Route path={path +'/login' } element={<Login />}></Route>
         <Route path={path +'/register' } element={<Register />}></Route>
         <Route path={path +'/calendarioReservas' } element={<Calenndar />}></Route>
+        <Route path={path +'/realizarReserva/:fecha/:hora'} element={<DetalleUsuario />}></Route>
       </Routes>
 
     </>
