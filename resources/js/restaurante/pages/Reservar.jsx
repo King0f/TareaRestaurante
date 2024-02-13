@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useState } from 'react-router-dom';
 
 function Reservar() {
   let { fecha, hora } = useParams();
