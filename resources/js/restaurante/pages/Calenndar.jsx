@@ -13,7 +13,7 @@ function Calenndar() {
             const formattedEvents = events.map((event) => ({
                 title: event.Horas_Disponibles, 
                 start: event.Dias_Disponibles, 
-                url: "/restaurante/realizarReserva/:" + event.Dias_Disponibles + "/:" + event.Horas_Disponibles 
+                url: `/restaurante/realizarReserva/${event.Dias_Disponibles}/${event.Horas_Disponibles}`
             }));
 
             setEvents(formattedEvents);
