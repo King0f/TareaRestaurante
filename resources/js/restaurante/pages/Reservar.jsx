@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 
 function Reservar() {
@@ -70,6 +72,7 @@ const handleChange = (e) => {
 };
   return (
     <>
+    <Header />
     {isLoggedIn ? (
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
@@ -118,6 +121,7 @@ const handleChange = (e) => {
     ) : (
         <h1>hola</h1>
     )}
+    <Footer />
     </>
   );
 }
