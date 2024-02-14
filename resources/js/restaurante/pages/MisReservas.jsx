@@ -45,7 +45,7 @@ function MisReservas (){
           });
       
           if (respuesta.ok) {
-            
+            window.location.reload();
           } else {
             console.error('Respuesta de error del servidor: ' + respuesta.status);
           }
