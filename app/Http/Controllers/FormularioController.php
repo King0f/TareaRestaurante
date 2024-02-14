@@ -114,7 +114,7 @@ class FormularioController extends Controller
 
     // Aquí obtienes los IDs de los modelos relacionados
     $cliente_id = $user->id; 
-    $menu_id = $request->input('menu');
+    $menu_id = Menu::where('Nombre', $request->input('menu'))->value('id');;
     $mesa_id = '1';
     $horario_id = '1';
 
