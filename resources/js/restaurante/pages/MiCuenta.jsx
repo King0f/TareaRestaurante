@@ -52,6 +52,9 @@ function MiCuenta (){
             console.error('Error al obtener las tarjetas:', error);
           });
     },[])
+    if (!user) {
+        return <p>Cargando detalles del usuario...</p>;
+      }
  return (
     <>
     <div>Hola</div>
