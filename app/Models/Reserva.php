@@ -18,16 +18,6 @@ class Reserva extends Model
         return $this->belongsTo(User::class, 'id');
     }
 
-    public function menu()
-    {
-        return $this->belongsTo(Menu::class, 'id_menu');
-    }
-
-    public function mesa()
-    {
-        return $this->belongsTo(Mesa::class, 'id_mesa');
-    }
-
     public function horario()
     {
         return $this->belongsTo(Horario::class, 'id_horario');
