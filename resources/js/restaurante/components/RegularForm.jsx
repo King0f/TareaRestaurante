@@ -146,7 +146,6 @@ const [cvv, setCvv] = useState();
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="telefono"
               name="telefono"
-              value={user.telefono}
               placeholder= "Inserte su telefono"
               onChange={(e) => setTelefono(e.target.value)}
             />
