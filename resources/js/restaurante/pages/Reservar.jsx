@@ -100,8 +100,17 @@ const handleSubmit = async (e) => {
       navigate('/resumenReserva', { state: { reservaId } })
       
     } else {
-      // Manejar errores de la respuesta
-      console.error('Respuesta de error del servidor: ' + respuesta);
+      console.error('Respuesta de error del servidor: ' + respuesta.status);
+    
+      // Intenta parsear la respuesta para obtener el mensaje de error
+      respuesta.json().then(error => {
+        console.error('Detalle del error:', error);
+      }).catch(() => {
+        // Si la respuesta no se pudo parsear a JSON, lee como texto
+        respuesta.text().then(texto => {
+          console.error('Respuesta de error como texto:', texto);
+        });
+      });
     }
   } catch (error) {
     console.error('Error al enviar los datos:', error);
