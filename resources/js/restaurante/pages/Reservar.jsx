@@ -11,7 +11,7 @@ function Reservar() {
   const isLoggedIn = !!localStorage.getItem('token');
   const [user, setUser] = useState();
   const [n_personas, setPersonas] = useState();
-  const [menu, setMenu] = useState();
+  const [menu, setMenu] = useState("");
   const [tarjetas, setTarjetas] = useState([]);
   const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState('');
   if (isLoggedIn) {
@@ -166,13 +166,14 @@ const handleSubmit = async (e) => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
+            <label htmlFor="menu" className="block text-gray-700 text-sm font-bold mb-2">
               Seleccione una menú para todos los comensales:
             </label>
             <select
               className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="tarjeta"
-              name="tarjeta"
+              id="menu"
+              name="menu"
+              value={menu}
               onChange={(e) => setMenu(e.target.value)}
             >
               <option value="">Seleccione un menú</option>
