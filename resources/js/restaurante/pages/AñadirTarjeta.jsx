@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AñadirTarjeta(){
     const [n_tarjeta, setNTarjeta] = useState();
     const [fecha_caducidad, setFechaCaducidad] = useState();
     const [cvv, setCvv] = useState();
+    const navigate = useNavigate();
 const handleSubmit = async (e) => {
   e.preventDefault(); 
   const token = localStorage.getItem('token');
