@@ -9,6 +9,7 @@ import ReservaRealizada from './pages/ReservaRealizada'
 
 import './App.css'
 import MisReservas from './pages/MisReservas';
+import MiCuenta from './pages/MiCuenta';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Route path={path +'/realizarReserva/:fecha/:hora'} element={<Reservar />}></Route>
         <Route path={path +'/resumenReserva'} element={<ReservaRealizada />}></Route>
         <Route path={path +'/misReservas'} element={<MisReservas />}></Route>
+        <Route path={path +'/miCuenta'} element={<MiCuenta />}></Route>
       </Routes>
 
     </>

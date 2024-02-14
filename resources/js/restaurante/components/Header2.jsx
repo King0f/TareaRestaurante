@@ -25,6 +25,7 @@ export const Header2 = ({}) => {
           <div className="flex space-x-4">
             <Link to="/restaurante/misReservas" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Mis Reservas</Link>
             <Link to="/restaurante/calendarioReservas" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Realizar una reserva</Link>
+            <Link to="/restaurante/miCuenta" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Mi cuenta</Link>
             <a onClick={cerrarSesion} className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Cerrar Sesion</a>
           </div>
         </div>
