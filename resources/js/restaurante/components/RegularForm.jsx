@@ -1,81 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
-import { Header2 } from "../components/Header2";
-import { Footer } from "../components/Footer";
-import RegularForm from "../components/RegularForm";
+import React, { useState } from "react";
 
+const [n_personas, setPersonas] = useState();
+const [menu, setMenu] = useState();
+const [nombre, setNombre] = useState();
+const [email, setEmail] = useState();
+const [apellidos, setApellidos] = useState();
+const [telefono, setTelefono] = useState();
+const [alergias, setAlergias] = useState();
+const [mesa, setMesa] = useState();
+const [n_tarjeta, setNTarjeta] = useState();
+const [fecha_caducidad, setFechaCaducidad] = useState();
+const [cvv, setCvv] = useState();
 
-function Reservar() {
-  let { fecha, hora } = useParams();
-  const isLoggedIn = !!localStorage.getItem('token');
-  const [user, setUser] = useState();
-  const [n_personas, setPersonas] = useState();
-  const [menu, setMenu] = useState();
-  const [mesa, setMesa] = useState();
-  const [tarjetas, setTarjetas] = useState([]);
-  const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState('');
-  if (isLoggedIn) {
-    useEffect(() => {
-      const obtenerDatosUsuario = async () => {
-        const token = localStorage.getItem('token');
-        
-        const headers = new Headers({
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` 
-        });
-  
-        const response = await fetch('/api/obtenerDatosUsuario', {
-          method: 'GET', 
-          headers: headers, 
-        });
-  
-        if (!response.ok) {
-          throw new Error('La petición falló o el token no es válido');
-        }
-  
-        const data = await response.json();
-        return data;
-      };
-
-      const cargarTarjetas = async () => {
-        const token = localStorage.getItem('token');
-        
-        const headers = new Headers({
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` 
-        });
-  
-        const response = await fetch('/api/obtenerTarjetas', {
-          method: 'GET', 
-          headers: headers, 
-        });
-
-        const data = await response.json();
-        return data;
-      };
-  
-      obtenerDatosUsuario().then(data => {
-        setUser(data)
-      }).catch(error => {
-        console.error('Error al obtener datos del usuario:', error);
-      });
-
-      cargarTarjetas().then(data => {
-        setTarjetas(data)
-      }).catch(error => {
-        console.error('Error al obtener las tarjetas:', error);
-      });
-    }, []); 
-
-  if (!user) {
-    return <p>Cargando detalles del usuario...</p>;
-  }
-}
-
+function RegularForm(props) {
   return (
     <>
-    <Header2 />
-    {isLoggedIn ? (
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-[80rem]">
       <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos de la reserva</h2>
@@ -89,8 +28,8 @@ function Reservar() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="fecha"
               name="fecha"
-              value={fecha}
-              placeholder={fecha}
+              value={props.fecha}
+              placeholder={props.fecha}
               readOnly
             />
           </div>
@@ -103,8 +42,8 @@ function Reservar() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="hora"
               name="hora"
-              value={hora}
-              placeholder={hora}
+              value={props.hora}
+              placeholder={props.hora}
               readOnly
             />
           </div>
@@ -169,9 +108,8 @@ function Reservar() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="nombre"
               name="nombre"
-              value={user.name}
-              placeholder={user.name}
-              readOnly
+              placeholder= "Inserte su nombre"
+              onChange={(e) => setNombre(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -183,9 +121,8 @@ function Reservar() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="apellido"
               name="apellido"
-              value={user.apellido}
-              placeholder={user.apellido}
-              readOnly
+              placeholder= "Inserte sus apellidos"
+              onChange={(e) => setApellidos(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -197,9 +134,8 @@ function Reservar() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               name="email"
-              value={user.email}
-              placeholder={user.email}
-              readOnly
+              placeholder= "Inserte su email"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -212,8 +148,8 @@ function Reservar() {
               id="telefono"
               name="telefono"
               value={user.telefono}
-              placeholder={user.telefono}
-              readOnly
+              placeholder= "Inserte su telefono"
+              onChange={(e) => setTelefono(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -225,29 +161,48 @@ function Reservar() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="alergias"
               name="alergias"
-              value={user.alergias}
-              placeholder={user.alergias}
-              readOnly
+              placeholder= "Desarrolle aqui si tiene alguna alergia"
+              onChange={(e) => setAlergias(e.target.value)}
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
-              Seleccione una tarjeta:
+            <label htmlFor="N_Tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
+              Nº de tarjeta:
             </label>
-            <select
-              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="tarjeta"
-              name="tarjeta"
-              value={tarjetaSeleccionada}
-              onChange={(e) => setTarjetaSeleccionada(e.target.value)}
-            >
-              <option value="">Seleccione una tarjeta</option>
-              {tarjetas.map((tarjeta) => (
-                <option key={tarjeta.id} value={tarjeta.id}>
-                  {tarjeta.Nº_Tarjeta}
-                </option>
-              ))}
-            </select>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="N_Tarjeta"
+              name="N_Tarjeta"
+              placeholder= "Inserte el número de su tarjeta"
+              onChange={(e) => setNTarjeta(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="Fecha_Caducidad" className="block text-gray-700 text-sm font-bold mb-2">
+              Fecha de Caducidad:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="Fecha_Caducidad"
+              name="Fecha_Caducidad"
+              placeholder= "Inserte la fecha de caducidad de la tarjeta introducida"
+              onChange={(e) => setFechaCaducidad(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="CVV" className="block text-gray-700 text-sm font-bold mb-2">
+              CVV:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="CVV"
+              name="CVV"
+              placeholder= "Inserte EL CVV de la tarjeta introducida"
+              onChange={(e) => setCvv(e.target.value)}
+            />
           </div>
           <div className="flex items-center justify-between">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
@@ -257,12 +212,8 @@ function Reservar() {
         </form>
       </div>
     </div>
-    ) : (
-        <RegularForm fecha={fecha} hora={hora}/>
-    )}
-    <Footer />
     </>
   );
 }
 
-export default Reservar
+export default RegularForm
