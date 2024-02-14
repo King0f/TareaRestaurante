@@ -92,9 +92,10 @@ class ReservasController extends Controller
     * 
     * return una respuesta JSON con un mensaje indicando que la reserva se ha eliminado correctamente.
     */
-    public function borrarReserva($id, Request $request)
+    public function borrarReserva(Request $request)
     {
          $idUsuario = $request->user()->id;
+         $id = $request->input('idReserva');
          $reserva = Reserva::where('id',$id)->where('id_cliente',$idUsuario);
          $reserva->delete();
          return response()->json(["message" => "Reserva Borrada con exito"]);

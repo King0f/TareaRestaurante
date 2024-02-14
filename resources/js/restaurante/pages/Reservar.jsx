@@ -75,7 +75,6 @@ function Reservar() {
 const handleSubmit = async (e) => {
   e.preventDefault(); 
   const token = localStorage.getItem('token');
-  console.log(fecha,hora,n_personas,tarjetaSeleccionada,menu);
   try {
     const respuesta = await fetch('/api/procesarReservaLogged', {
       method: 'POST', 

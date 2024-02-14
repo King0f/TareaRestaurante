@@ -29,6 +29,27 @@ function MisReservas (){
             console.error('Error al obtener las tarjetas:', error);
           })
     })
+
+    const handleBorrar = async (id) => {
+        const token = localStorage.getItem('token')
+        const respuesta = await fetch('/api/borrarReserva', {
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              idReserva: id,
+            }), 
+          });
+      
+          if (respuesta.ok) {
+            window.location.reload();
+            
+          } else {
+            console.error('Respuesta de error del servidor: ' + respuesta.status);
+          }
+    }
  return (
     <>
     <div>Hola</div>
@@ -39,6 +60,8 @@ function MisReservas (){
                 <p>Hora: {reserva.Hora}</p>
                 <p>Número de comensales: {reserva.Nº_Personas}</p>
                 <p>Menu seleccionado: {reserva.id_menu === 1 ? "Menu 1" : "Menu 2"}</p>
+                <a onClick={handleBorrar(reserva.id)}>Borrar la reserva</a>
+
         </>
               ))}
     </>
