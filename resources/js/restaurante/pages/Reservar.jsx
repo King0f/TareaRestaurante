@@ -79,6 +79,34 @@ function Reservar() {
       <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos de la reserva</h2>
         <form>
           <div className="mb-4">
+            <label htmlFor="fecha" className="block text-gray-700 text-sm font-bold mb-2">
+              Dia de la reserva:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="fecha"
+              name="fecha"
+              value={fecha}
+              placeholder={fecha}
+              readOnly
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="hora" className="block text-gray-700 text-sm font-bold mb-2">
+              Hora de la reserva:
+            </label>
+            <input
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="hora"
+              name="hora"
+              value={hora}
+              placeholder={hora}
+              readOnly
+            />
+          </div>
+          <div className="mb-4">
             <label htmlFor="Nº_Personas" className="block text-gray-700 text-sm font-bold mb-2">
               Nº de personas para la reserva:
             </label>
