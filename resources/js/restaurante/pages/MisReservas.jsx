@@ -32,7 +32,7 @@ function MisReservas (){
  return (
     <>
     <div>Hola</div>
-    {reservas.map((reserva) => (
+    {reservas?.map((reserva) => (
                 <p>Id de la reserva: {reserva.id}</p>
               ))}
     </>
