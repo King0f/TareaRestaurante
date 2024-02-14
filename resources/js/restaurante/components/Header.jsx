@@ -23,7 +23,7 @@ export const Header = ({}) => {
             <Link to="/restaurante"><span className="text-3xl font-bold shadow">Los Cuatro Sentidos</span></Link>
           </div>
           <div className="flex space-x-4">
-            <Link to="/restaurante/login" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Mis Reservas</Link>
+            <Link to="/restaurante/misReservas" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Mis Reservas</Link>
             <Link to="/restaurante/calendarioReservas" className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Realizar una reserva</Link>
             <a onClick={cerrarSesion} className="mb-2 text-xl px-3 py2 rounded mt-2 shadow1 nav-link">Cerrar Sesion</a>
           </div>

@@ -8,6 +8,7 @@ import Reservar from './pages/Reservar';
 import ReservaRealizada from './pages/ReservaRealizada'
 
 import './App.css'
+import MisReservas from './pages/MisReservas';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path={path +'/calendarioReservas' } element={<Calenndar />}></Route>
         <Route path={path +'/realizarReserva/:fecha/:hora'} element={<Reservar />}></Route>
         <Route path={path +'/resumenReserva'} element={<ReservaRealizada />}></Route>
+        <Route path={path +'/misReservas'} element={<MisReservas />}></Route>
       </Routes>
 
     </>
