@@ -21,9 +21,13 @@ function MisReservas (){
           }
     
           const data = await response.json();
-          setReserva(data.results);
+          return data;
         };
-        obtenerDatosUsuario()
+        obtenerDatosUsuario().then(data => {
+            setReserva(data)
+          }).catch(error => {
+            console.error('Error al obtener las tarjetas:', error);
+          })
     })
  return (
     <>
