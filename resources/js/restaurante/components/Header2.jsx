@@ -30,7 +30,7 @@ export const Header2 = ({}) => {
         </div>
     </nav>
     ) : (
-      <nav className="bg-gray-700  bg-opacity-5  p-4 text-white font-mono custom-nav">
+      <nav className="bg-gray-700 p-4 text-white font-mono custom-nav">
       <div className="flex justify-between ">
         <div>
           <Link to="/restaurante"><span className="text-3xl font-bold shadow">Los Cuatro Sentidos</span></Link>
