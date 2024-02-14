@@ -21,7 +21,7 @@ function MisReservas (){
           }
     
           const data = await response.json();
-          setReserva(data);
+          setReserva(data.results);
         };
         obtenerDatosUsuario()
     })
