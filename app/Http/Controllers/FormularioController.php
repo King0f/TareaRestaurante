@@ -116,7 +116,7 @@ class FormularioController extends Controller
     $cliente_id = $user->id; 
     $menu_id = $request->input('menu');
     $mesa_id = '1';
-    $horario_id = Horario::where('Dias_Disponibles', $request->input('fecha'))->where('Horas_Disponibles', $request->input('hora'))->value('id');
+    $horario_id = '1';
 
     // Asigna los IDs a la reserva
     $reserva->id_cliente = $cliente_id;
