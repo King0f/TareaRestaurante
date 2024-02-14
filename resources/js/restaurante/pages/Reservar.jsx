@@ -96,7 +96,7 @@ const handleSubmit = async (e) => {
     if (respuesta.ok) {
       const resultado = await respuesta.json();
       const reservaId = resultado.id;
-      navigate('/resumenReserva', { state: { reservaId } })
+      navigate('/restaurante/resumenReserva', { state: { reservaId } })
       
     } else {
       console.error('Respuesta de error del servidor: ' + respuesta.status);
