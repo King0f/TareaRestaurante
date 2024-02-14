@@ -28,7 +28,7 @@ function MisReservas (){
           }).catch(error => {
             console.error('Error al obtener las tarjetas:', error);
           })
-    })
+    },[])
 
     const handleBorrar = async (id) => {
         const token = localStorage.getItem('token')
