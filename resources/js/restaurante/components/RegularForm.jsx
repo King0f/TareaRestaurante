@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
+function RegularForm(props) {
 const [n_personas, setPersonas] = useState();
 const [menu, setMenu] = useState();
 const [nombre, setNombre] = useState();
@@ -11,8 +12,6 @@ const [mesa, setMesa] = useState();
 const [n_tarjeta, setNTarjeta] = useState();
 const [fecha_caducidad, setFechaCaducidad] = useState();
 const [cvv, setCvv] = useState();
-
-function RegularForm(props) {
   return (
     <>
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
