@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Calenndar from './pages/Calenndar'
 import Reservar from './pages/Reservar';
+import ReservaRealizada from './pages/ReservaRealizada'
 
 import './App.css'
 
@@ -28,7 +29,7 @@ function App() {
         <Route path={path +'/register' } element={<Register />}></Route>
         <Route path={path +'/calendarioReservas' } element={<Calenndar />}></Route>
         <Route path={path +'/realizarReserva/:fecha/:hora'} element={<Reservar />}></Route>
-        <Route path={path +'/resumenReserva'} element={<Reservar />}></Route>
+        <Route path={path +'/resumenReserva'} element={<ReservaRealizada />}></Route>
       </Routes>
 
     </>
