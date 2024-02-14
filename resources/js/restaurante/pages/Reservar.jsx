@@ -76,14 +76,7 @@ const handleSubmit = async (e) => {
   e.preventDefault(); 
   const token = localStorage.getItem('token');
   // Datos que se enviarán
-  const datosParaEnviar = {
-    fecha: fecha,
-    hora: hora,
-    n_personas: n_personas,
-    menu: menu,
-    tarjeta: tarjetaSeleccionada,
-  };
-
+  
   try {
     const respuesta = await fetch('/api/procesarReservaLogged', {
       method: 'POST', 
@@ -91,7 +84,14 @@ const handleSubmit = async (e) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
       },
-      body: JSON.stringify(datosParaEnviar), 
+      body: JSON.stringify({
+        fecha: fecha,
+        hora: hora,
+        n_personas: n_personas,
+        tarjeta: tarjetaSeleccionada,
+        menu: menu,
+        // Incluye cualquier otro dato necesario
+      }), 
     });
 
     if (respuesta.ok) {
