@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Header2 } from "../components/Header2";
 import { Footer } from "../components/Footer";
 import RegularForm from "../components/RegularForm";
@@ -7,11 +7,11 @@ import RegularForm from "../components/RegularForm";
 
 function Reservar() {
   let { fecha, hora } = useParams();
+  const navigate = useNavigate()
   const isLoggedIn = !!localStorage.getItem('token');
   const [user, setUser] = useState();
   const [n_personas, setPersonas] = useState();
   const [menu, setMenu] = useState();
-  const [mesa, setMesa] = useState();
   const [tarjetas, setTarjetas] = useState([]);
   const [tarjetaSeleccionada, setTarjetaSeleccionada] = useState('');
   if (isLoggedIn) {
@@ -72,6 +72,42 @@ function Reservar() {
   }
 }
 
+const handleSubmit = async (e) => {
+  e.preventDefault(); 
+
+  // Datos que se enviarán
+  const datosParaEnviar = {
+    fecha: fecha,
+    hora: hora,
+    n_personas: n_personas,
+    menu: menu,
+    tarjeta: tarjetaSeleccionada,
+  };
+
+  try {
+    const respuesta = await fetch('/api/procesarReservaLogged', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(datosParaEnviar), 
+    });
+
+    if (respuesta.ok) {
+      const resultado = await respuesta.json();
+      const reservaId = resultado.id;
+      navigate('/resumenReserva', { state: { reservaId } })
+      
+    } else {
+      // Manejar errores de la respuesta
+      console.error('Respuesta de error del servidor');
+    }
+  } catch (error) {
+    console.error('Error al enviar los datos:', error);
+  }
+};
+
   return (
     <>
     <Header2 />
@@ -79,7 +115,7 @@ function Reservar() {
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-[80rem]">
       <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos de la reserva</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="fecha" className="block text-gray-700 text-sm font-bold mb-2">
               Dia de la reserva:
@@ -132,34 +168,11 @@ function Reservar() {
               onChange={(e) => setMenu(e.target.value)}
             >
               <option value="">Seleccione un menú</option>
-              <option value="menu1">Menu 1 - Sensaciones encontradas</option>
-              <option value="menu2">Menu 2 - Todas las emociones</option>
+              <option value="menu1">Menu 1 - Sensaciones encontradas - 75€</option>
+              <option value="menu2">Menu 2 - Todas las emociones - 150€</option>
             </select>
           </div>
-          <div className="mb-4">
-            <label htmlFor="mesa" className="block text-gray-700 text-sm font-bold mb-2">
-              Seleccione la mesa en la que desea comer:
-            </label>
-            <select
-              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="mesa"
-              name="mesa"
-              onChange={(e) => setMesa(e.target.value)}
-            >
-              <option value="">Seleccione la mesa</option>
-              <option value="1">Mesa 1</option>
-              <option value="2">Mesa 2</option>
-              <option value="3">Mesa 3</option>
-              <option value="4">Mesa 4</option>
-              <option value="5">Mesa 5</option>
-              <option value="6">Mesa 6</option>
-              <option value="7">Mesa 7</option>
-              <option value="8">Mesa 8</option>
-            </select>
-          </div>
-        </form>
         <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos del Usuario</h2>
-        <form>
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-gray-700 text-sm font-bold mb-2">
               Nombre:
@@ -250,7 +263,7 @@ function Reservar() {
             </select>
           </div>
           <div className="flex items-center justify-between">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Enviar
             </button>
           </div>

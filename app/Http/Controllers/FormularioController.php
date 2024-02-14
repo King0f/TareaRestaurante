@@ -91,12 +91,13 @@ class FormularioController extends Controller
      * return una vista llamada 'vistaprincipal' con un mensaje indicando que se ha enviado un email
      * con los datos de la reserva.
      */
-    public function procesarFormulario(Request $request)
+    public function procesarReservaLogged(Request $request)
 {
+    $user = $request->user();
     $reserva = new Reserva();
     $reserva->Fecha = $request->input('fecha'); 
     $reserva->Hora = $request->input('hora'); 
-    $reserva->Nº_Personas = $request->input('comensales');
+    $reserva->Nº_Personas = $request->input('n_personas');
     $tarjeta_id = $request->input('tarjeta');
 
     // Asegúrate de reemplazar 'id' con el nombre real del campo en tu modelo de tarjeta
@@ -112,9 +113,9 @@ class FormularioController extends Controller
     $reserva->Estado = 'Ocupado'; 
 
     // Aquí obtienes los IDs de los modelos relacionados
-    $cliente_id = Auth::id(); // Esto asume que tienes la función Auth para obtener el ID del cliente actualmente autenticado
-    $menu_id = Menu::where('Nombre', $request->input('menu'))->value('id');
-    $mesa_id = $request->input('comensales') > 4 ? Mesa::where('Capacidad', 8)->value('id') : Mesa::where('Capacidad', 4)->value('id');
+    $cliente_id = $user->id; 
+    $menu_id = $request->input('menu');
+    $mesa_id = $request->input('n_personas') > 4 ? Mesa::where('Capacidad', 8)->value('id') : Mesa::where('Capacidad', 4)->value('id');
     $horario_id = Horario::where('Dias_Disponibles', $request->input('fecha'))->where('Horas_Disponibles', $request->input('hora'))->value('id');
 
     // Asigna los IDs a la reserva
@@ -127,8 +128,6 @@ class FormularioController extends Controller
     // Guarda la reserva en la base de datos
     $reserva->save();
 
-
-    // Redirige al usuario a la página principal con un mensaje de confirmación
-    return view('reservaRealizada')->with('reserva', $reserva);
+    return response()->json($reserva);
 }
 }

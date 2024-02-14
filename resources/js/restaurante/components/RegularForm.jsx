@@ -70,29 +70,8 @@ const [cvv, setCvv] = useState();
               onChange={(e) => setMenu(e.target.value)}
             >
               <option value="">Seleccione un menú</option>
-              <option value="menu1">Menu 1 - Sensaciones encontradas</option>
-              <option value="menu2">Menu 2 - Todas las emociones</option>
-            </select>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="mesa" className="block text-gray-700 text-sm font-bold mb-2">
-              Seleccione la mesa en la que desea comer:
-            </label>
-            <select
-              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="mesa"
-              name="mesa"
-              onChange={(e) => setMesa(e.target.value)}
-            >
-              <option value="">Seleccione la mesa</option>
-              <option value="1">Mesa 1</option>
-              <option value="2">Mesa 2</option>
-              <option value="3">Mesa 3</option>
-              <option value="4">Mesa 4</option>
-              <option value="5">Mesa 5</option>
-              <option value="6">Mesa 6</option>
-              <option value="7">Mesa 7</option>
-              <option value="8">Mesa 8</option>
+              <option value="menu1">Menu 1 - Sensaciones encontradas - 75€</option>
+              <option value="menu2">Menu 2 - Todas las emociones - 150€</option>
             </select>
           </div>
         </form>
