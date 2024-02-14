@@ -101,7 +101,7 @@ const handleSubmit = async (e) => {
       
     } else {
       // Manejar errores de la respuesta
-      console.error('Respuesta de error del servidor');
+      console.error('Respuesta de error del servidor: ' + respuesta);
     }
   } catch (error) {
     console.error('Error al enviar los datos:', error);
