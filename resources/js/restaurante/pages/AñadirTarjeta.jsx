@@ -10,7 +10,7 @@ const handleSubmit = async (e) => {
   e.preventDefault(); 
   const token = localStorage.getItem('token');
   try {
-    const respuesta = await fetch('/api/anadirTarjeta', {
+    const respuesta = await fetch('/api/addTarjeta', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
