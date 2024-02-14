@@ -31,6 +31,7 @@ function MisReservas (){
     },[])
 
     const handleBorrar = async (id) => {
+        console.log('borrar')
         const token = localStorage.getItem('token')
         const respuesta = await fetch('/api/borrarReserva', {
             method: 'POST', 
