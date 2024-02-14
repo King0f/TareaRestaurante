@@ -23,7 +23,7 @@ class MiCuentaController extends Controller
 
 public function guardarTarjeta(Request $request)
 {
-    $user = Auth::user();
+    $user = $request->user();
 
     $request->validate([
         'Nº_Tarjeta' => 'required',
@@ -31,16 +31,15 @@ public function guardarTarjeta(Request $request)
         'CVV' => 'required',
     ]);
 
-    // Crea una nueva tarjeta de crédito
     $tarjeta = new Tarjeta([
-        'Nº_Tarjeta' => $request->Nº_Tarjeta,
-        'Fecha_Caducidad' => $request->Fecha_Caducidad,
-        'CVV' => $request->CVV,
+        'Nº_Tarjeta' => $request->N_Tarjeta,
+        'Fecha_Caducidad' => $request->fecha_caducidad,
+        'CVV' => $request->cvv,
         'id_cliente' => $user->id,
     ]);
 
     $tarjeta->save();
 
-    return redirect()->route('mi-cuenta')->with('success', 'Tarjeta de crédito guardada con éxito.');
+    return response()->json("success");
 }
 }
