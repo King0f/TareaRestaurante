@@ -74,7 +74,7 @@ function Reservar() {
 
 const handleSubmit = async (e) => {
   e.preventDefault(); 
-
+  const token = localStorage.getItem('token');
   // Datos que se enviarán
   const datosParaEnviar = {
     fecha: fecha,
