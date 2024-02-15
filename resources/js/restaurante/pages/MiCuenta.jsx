@@ -90,6 +90,26 @@ function MiCuenta (){
         setAñadida(!añadida)
         setMostrarFormulario(false);
   };
+  const handleBorrar = async (id) => {
+    console.log('borrar')
+    const token = localStorage.getItem('token')
+    const respuesta = await fetch('/api/borrarTarjeta', {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          idTarjeta: id,
+        }), 
+      });
+  
+      if (respuesta.ok) {
+        setAñadida(!añadida)
+      } else {
+        console.error('Respuesta de error del servidor: ' + respuesta.status);
+      }
+}
     if (!user) {
         return <p>Cargando detalles del usuario...</p>;
       }
@@ -110,6 +130,7 @@ function MiCuenta (){
                 <span>Número de la tarjeta: {tarjeta.Nº_Tarjeta}</span>
                 <span>Fecha de caducidad: {tarjeta.Fecha_Caducidad}</span>
                 <span>CVV: {tarjeta.CVV}</span>
+                <button className="text-black" onClick={() => handleBorrar(tarjeta.id)}>Borrar tarjeta de credito</button>
         </li>
         </>
               ))}
