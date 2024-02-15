@@ -5,6 +5,9 @@ import { Footer } from "../components/Footer";
 
 function ReservaRealizada() {
     const isLoggedIn = !!localStorage.getItem('token');
+    function volverAlInicio() {
+      window.location.href = '/restaurante/';
+  }
   
     return (
       <>
@@ -16,9 +19,7 @@ function ReservaRealizada() {
         <Link to={'/restaurante/misReservas'}>
         <button>Mis Reservas</button>
         </Link>
-        <Link to={'/restaurante/'}>
-          <button>Volver al inicio</button>
-        </Link>
+          <button onClick={volverAlInicio}>Volver al inicio</button>
        </div> 
       ) : (
         <div>Hola</div>
