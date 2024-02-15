@@ -10,7 +10,7 @@ import React from 'react'
 
 export const ButtonHome = ({onMouseEnter, onMouseLeave, hovered}) => {
   return (
-    <button className="text-white font-bold py-3 px-6 rounded mt-4 ${hovered ? 'hovered' : ''}"
+    <button className="botonInicio text-white font-bold py-3 px-6 rounded mt-4 ${hovered ? 'hovered' : ''}"
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
       >
