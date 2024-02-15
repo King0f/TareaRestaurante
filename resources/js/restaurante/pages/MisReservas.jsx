@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 
 function MisReservas (){
     const [reservas,setReserva] = useState()
+    const navigate = useNavigate()
     useEffect(() => {
         const obtenerDatosUsuario = async () => {
           const token = localStorage.getItem('token');
@@ -45,7 +47,7 @@ function MisReservas (){
           });
       
           if (respuesta.ok) {
-            window.location.reload();
+            navigate('/restaurante/misReservas')
           } else {
             console.error('Respuesta de error del servidor: ' + respuesta.status);
           }
