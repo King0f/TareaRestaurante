@@ -86,7 +86,7 @@ function MiCuenta (){
         } catch (error) {
           console.error('Error al enviar los datos:', error);
         }
-        // Opcional: Ocultar el formulario después de enviar
+        setTarjetas('aa')
         setMostrarFormulario(false);
   };
     if (!user) {
