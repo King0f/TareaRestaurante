@@ -29,7 +29,7 @@ function MisReservas (){
           }).catch(error => {
             console.error('Error al obtener las tarjetas:', error);
           })
-    },[])
+    },[reservas])
 
     const handleBorrar = async (id) => {
         console.log('borrar')
@@ -46,7 +46,7 @@ function MisReservas (){
           });
       
           if (respuesta.ok) {
-            window.location.href = '/restaurante/misReservas'
+            console.log('reserva borrada')
           } else {
             console.error('Respuesta de error del servidor: ' + respuesta.status);
           }
