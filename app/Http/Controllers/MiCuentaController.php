@@ -26,9 +26,9 @@ public function guardarTarjeta(Request $request)
     $user = $request->user();
 
     $request->validate([
-        'Nº_Tarjeta' => 'required',
-        'Fecha_Caducidad' => 'required',
-        'CVV' => 'required',
+        'N_Tarjeta' => 'required',
+        'fecha_caducidad' => 'required',
+        'cvv' => 'required',
     ]);
 
     $tarjeta = new Tarjeta([

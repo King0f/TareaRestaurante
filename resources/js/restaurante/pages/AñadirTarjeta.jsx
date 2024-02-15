@@ -6,8 +6,7 @@ function AñadirTarjeta(){
     const [fecha_caducidad, setFechaCaducidad] = useState();
     const [cvv, setCvv] = useState();
     const navigate = useNavigate();
-const handleSubmit = async (e) => {
-  e.preventDefault(); 
+  const handleSubmit = async () => {
   const token = localStorage.getItem('token');
   try {
     const respuesta = await fetch('/api/addTarjeta', {
