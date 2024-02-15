@@ -59,6 +59,7 @@ function MisReservas (){
                 <p>Fecha: {reserva.Fecha}</p>
                 <p>Hora: {reserva.Hora}</p>
                 <p>Número de comensales: {reserva.Nº_Personas}</p>
+                <p>Número de mesa para su reserva: {reserva.id_mesa}</p>
                 <p>Menu seleccionado: {reserva.id_menu === 1 ? "Menu 1" : "Menu 2"}</p>
                 <button className="text-black" onClick={() => handleBorrar(reserva.id)}>Borrar la reserva</button>
 
