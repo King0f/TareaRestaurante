@@ -47,7 +47,7 @@ function MisReservas (){
           });
       
           if (respuesta.ok) {
-            navigate('/restaurante/misReservas')
+            window.location.href('/restaurante/misReservas')
           } else {
             console.error('Respuesta de error del servidor: ' + respuesta.status);
           }
