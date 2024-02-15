@@ -77,7 +77,7 @@ function MiCuenta (){
         </>
               ))}
     </ul>
-    <Link to="/restaurante/añadirTarjeta">
+    <Link to="/restaurante/addTarjeta">
     <button>Añadir tarjeta a la cuenta</button>
     </Link>
     </>

@@ -35,7 +35,7 @@ function App() {
         <Route path={path +'/resumenReserva'} element={<ReservaRealizada />}></Route>
         <Route path={path +'/misReservas'} element={<MisReservas />}></Route>
         <Route path={path +'/miCuenta'} element={<MiCuenta />}></Route>
-        <Route path={path +'/añadirTarjeta'} element={<AñadirTarjeta />}></Route>
+        <Route path={path +'/addTarjeta'} element={<AñadirTarjeta />}></Route>
       </Routes>
 
     </>
