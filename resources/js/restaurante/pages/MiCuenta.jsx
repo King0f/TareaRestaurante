@@ -123,19 +123,19 @@ function MiCuenta (){
     <p><b>Alergias:</b> {user.alergias}</p>
     <p><b>Email:</b> {user.email}</p>
     <h2>Tarjetas de credito guardadas:</h2>
-    <div>
+    <ul>
     {tarjetas?.map((tarjeta) => (
         <>
-        <div>
-                <p>Número de la tarjeta: {tarjeta.Nº_Tarjeta}</p>
-                <p>Fecha de caducidad: {tarjeta.Fecha_Caducidad}</p>
-                <p>CVV: {tarjeta.CVV}</p>
-                <p>Me cago</p>
-                <button className="text-black" onClick={() => handleBorrar(tarjeta.id)}>Borrar tarjeta de credito</button>
-        </div>
+        <li>
+                <span>Número de la tarjeta: {tarjeta.Nº_Tarjeta}</span>
+                <span>Fecha de caducidad: {tarjeta.Fecha_Caducidad}</span>
+                <span>CVV: {tarjeta.CVV}</span>
+                <span>Me cagoo</span>
+        </li>
+        
         </>
               ))}
-    </div>
+    </ul>
     <button onClick={toggleFormulario} className="text-black">
                 Añadir tarjeta a la cuenta
     </button>
