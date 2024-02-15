@@ -130,7 +130,7 @@ function MiCuenta (){
                 <span>Número de la tarjeta: {tarjeta.Nº_Tarjeta}</span>
                 <span>Fecha de caducidad: {tarjeta.Fecha_Caducidad}</span>
                 <span>CVV: {tarjeta.CVV}</span>
-                <button className="text-black" onClick={() => handleBorrar(reserva.id)}>Borrar la reserva</button>
+                <button className="text-black" onClick={() => handleBorrar(tarjeta.id)}>Borrar la reserva</button>
         </li>
         
         </>

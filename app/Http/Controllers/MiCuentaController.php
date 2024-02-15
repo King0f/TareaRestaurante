@@ -18,7 +18,7 @@ class MiCuentaController extends Controller
     }
     public function borrarTarjeta(Request $request)
     {
-        $id = $request->input['id'];
+        $id = $request->input['idTarjeta'];
         $tar = Tarjeta::where('id',$id);
          $tar->delete();
          return response()->json(["message" => "Tarjeta Borrada con exito"]);
