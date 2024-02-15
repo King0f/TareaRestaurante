@@ -92,12 +92,10 @@ function MiCuenta (){
   };
   const handleBorrar = async (id) => {
     console.log(id) ; 
-    const token = localStorage.getItem('token')
     const respuesta = await fetch('/api/borrarTarjeta', {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
           idTarjeta: id,
