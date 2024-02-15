@@ -7,6 +7,7 @@ function MiCuenta (){
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [n_tarjeta, setNTarjeta] = useState();
     const [fecha_caducidad, setFechaCaducidad] = useState();
+    const [añadida, setAñadida] = useState(false);
     const [cvv, setCvv] = useState(); // Nuevo estado para controlar la visibilidad del formulario
     useEffect(() => {
         const obtenerDatosUsuario = async () => {
@@ -58,7 +59,7 @@ function MiCuenta (){
           });
 
           
-    },[tarjetas])
+    },[tarjetas,añadida])
 
     const toggleFormulario = () => {
       setMostrarFormulario(!mostrarFormulario);
@@ -86,7 +87,7 @@ function MiCuenta (){
         } catch (error) {
           console.error('Error al enviar los datos:', error);
         }
-        setTarjetas('aa')
+        setAñadida(!añadida)
         setMostrarFormulario(false);
   };
     if (!user) {
