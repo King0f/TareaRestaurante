@@ -9,7 +9,7 @@ function ReservaRealizada() {
     return (
       <>
       <Header2/>
-      (isLoggedIn ? (
+      ({isLoggedIn ? (
         <div>
         <h1>Reserva realizada con exito</h1>
         <h2>Compruebe la pagina de 'Mis Reservas' para comprobar todos los datos de su reserva</h2>
@@ -22,7 +22,7 @@ function ReservaRealizada() {
        </div> 
       ) : (
         <div>Hola</div>
-      ))
+      )})
       <Footer/>
       </>
     )
