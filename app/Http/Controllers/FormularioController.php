@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reserva;
-use App\Models\Mesa;
+use App\Models\mesa;
 use App\Models\Menu;
 use App\Models\Tarjeta;
 use App\Models\horario;
@@ -115,7 +115,7 @@ class FormularioController extends Controller
     // Aquí obtienes los IDs de los modelos relacionados
     $cliente_id = $user->id; 
     $menu_id = Menu::where('Nombre', $request->input('menu'))->value('id');;
-    $mesa_id = 1;
+    $mesa_id = $request->input('n_personas') > 4 ? Mesa::where('Capacidad', 8)->value('id') : Mesa::where('Capacidad', 4)->value('id');
     $horario_id = Horario::where('Dias_Disponibles', $request->input('fecha'))->where('Horas_Disponibles', $request->input('hora'))->value('id');;
 
     // Asigna los IDs a la reserva
