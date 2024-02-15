@@ -6,7 +6,7 @@ use App\Models\Reserva;
 use App\Models\Mesa;
 use App\Models\Menu;
 use App\Models\Tarjeta;
-use App\Models\Horario;
+use App\Models\horario;
 use App\Mail\ReservaMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
