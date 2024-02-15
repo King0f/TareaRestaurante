@@ -35,7 +35,7 @@ function MisReservas (){
     const handleBorrar = async (id) => {
         console.log('borrar')
         const token = localStorage.getItem('token')
-        await fetch('/api/borrarReserva', {
+        const respuesta = await fetch('/api/borrarReserva', {
             method: 'POST', 
             headers: {
               'Content-Type': 'application/json',
@@ -45,7 +45,12 @@ function MisReservas (){
               idReserva: id,
             }), 
           });
+      
+          if (respuesta.ok) {
             setActu[!actualizar]
+          } else {
+            console.error('Respuesta de error del servidor: ' + respuesta.status);
+          }
     }
  return (
     <>
