@@ -91,7 +91,7 @@ function MiCuenta (){
         setMostrarFormulario(false);
   };
   const handleBorrar = async (id) => {
-    console.log(id);
+    console.log(id) ; 
     const token = localStorage.getItem('token')
     const respuesta = await fetch('/api/borrarTarjeta', {
         method: 'POST', 
