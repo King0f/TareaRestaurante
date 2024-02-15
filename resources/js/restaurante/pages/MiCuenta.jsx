@@ -116,7 +116,7 @@ function MiCuenta (){
  return (
     <>
     <div>Hola</div>
-    <h2>Datos del usuario</h2>
+    <h2>Datos del usuario AKEUBGFEUKHGSK,DAUG</h2>
     <p><b>Nombre:</b> {user.name}</p>
     <p><b>Apellidos:</b> {user.apellido}</p>
     <p><b>Teléfono:</b> {user.telefono}</p>
