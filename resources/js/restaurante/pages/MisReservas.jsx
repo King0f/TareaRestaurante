@@ -47,7 +47,7 @@ function MisReservas (){
           });
       
           if (respuesta.ok) {
-            setActu[!actualizar]
+            setActu(!actualizar)
           } else {
             console.error('Respuesta de error del servidor: ' + respuesta.status);
           }
