@@ -17,9 +17,9 @@ function ReservaRealizada() {
         <h1>Reserva realizada con exito</h1>
         <h2>Compruebe la pagina de 'Mis Reservas' para comprobar todos los datos de su reserva</h2>
         <Link to={'/restaurante/misReservas'}>
-        <button>Mis Reservas</button>
+        <button className="text-black">Mis Reservas</button>
         </Link>
-          <button onClick={volverAlInicio}>Volver al inicio</button>
+          <button className="text-black" onClick={volverAlInicio}>Volver al inicio</button>
        </div> 
       ) : (
         <div>Hola</div>
