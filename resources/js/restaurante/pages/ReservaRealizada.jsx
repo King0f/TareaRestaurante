@@ -2,18 +2,23 @@ import React from "react";
 import { Link, useLocation } from 'react-router-dom';
 
 function ReservaRealizada() {
-    const location = useLocation();
-    const { reservaId } = location.state || {};
+    const isLoggedIn = !!localStorage.getItem('token');
   
-    if (!reservaId) {
-      return <Redirect to="/" />;
-    }
     return (
-       <div>
-        <h1>RESERVA REALIZADA ILLOOOOOOOOOO</h1>
-        <h2> Resumen de su reserva: </h2>
-        <p>Nº de reserva: {reservaId}</p>
+      (isLoggedIn ? (
+        <div>
+        <h1>Reserva realizada con exito</h1>
+        <h2>Compruebe la pagina de 'Mis Reservas' para comprobar todos los datos de su reserva</h2>
+        <Link to={'/restaurante/misReservas'}>
+        <button>Mis Reservas</button>
+        </Link>
+        <Link to={'/restaurante/'}>
+          <button>Volver al inicio</button>
+        </Link>
        </div> 
+      ) : (
+        <div>Hola</div>
+      ))
     )
 }
 
