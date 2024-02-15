@@ -59,7 +59,7 @@ function MiCuenta (){
           });
 
           
-    },[tarjetas,añadida])
+    },[añadida])
 
     const toggleFormulario = () => {
       setMostrarFormulario(!mostrarFormulario);
