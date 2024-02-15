@@ -8,10 +8,58 @@ const [email, setEmail] = useState();
 const [apellidos, setApellidos] = useState();
 const [telefono, setTelefono] = useState();
 const [alergias, setAlergias] = useState();
-const [mesa, setMesa] = useState();
 const [n_tarjeta, setNTarjeta] = useState();
 const [fecha_caducidad, setFechaCaducidad] = useState();
 const [cvv, setCvv] = useState();
+const handleSubmit = async (e) => {
+  e.preventDefault(); 
+  const token = localStorage.getItem('token');
+  try {
+    const respuesta = await fetch('/api/procesarReservaLogged', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        fecha: props.fecha,
+        hora: props.hora,
+        nombre: nombre,
+        email: email,
+        apellidos: apellidos,
+        telefono: telefono,
+        alergias: alergias,
+        n_personas: n_personas,
+        n_tarjeta: n_tarjeta,
+        fecha_caducidad: fecha_caducidad,
+        cvv: cvv,
+        menu: menu,
+        // Incluye cualquier otro dato necesario
+      }), 
+    });
+
+    if (respuesta.ok) {
+      const resultado = await respuesta.json();
+      const reservaId = resultado.id;
+      navigate('/restaurante/resumenReserva', { state: { reservaId } })
+      
+    } else {
+      console.error('Respuesta de error del servidor: ' + respuesta.status);
+    
+      // Intenta parsear la respuesta para obtener el mensaje de error
+      respuesta.json().then(error => {
+        console.error('Detalle del error:', error);
+      }).catch(() => {
+        // Si la respuesta no se pudo parsear a JSON, lee como texto
+        respuesta.text().then(texto => {
+          console.error('Respuesta de error como texto:', texto);
+        });
+      });
+    }
+  } catch (error) {
+    console.error('Error al enviar los datos:', error);
+  }
+};
   return (
     <>
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
@@ -74,9 +122,7 @@ const [cvv, setCvv] = useState();
               <option value="menu2">Menu 2 - Todas las emociones - 150€</option>
             </select>
           </div>
-        </form>
         <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos del Usuario</h2>
-        <form>
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-gray-700 text-sm font-bold mb-2">
               Nombre:
@@ -182,7 +228,7 @@ const [cvv, setCvv] = useState();
             />
           </div>
           <div className="flex items-center justify-between">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Enviar
             </button>
           </div>
