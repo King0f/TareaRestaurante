@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import { Header2 } from '../components/Header2'
 
 function MisReservas (){
     const [reservas,setReserva] = useState()
@@ -52,7 +53,7 @@ function MisReservas (){
     }
  return (
     <>
-    <div>Hola</div>
+    <Header2/>
     {reservas?.map((reserva) => (
         <>
                 <p>Id de la reserva: {reserva.id}</p>
