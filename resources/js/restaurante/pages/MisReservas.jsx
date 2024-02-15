@@ -3,6 +3,7 @@ import { Header2 } from '../components/Header2'
 
 function MisReservas (){
     const [reservas,setReserva] = useState()
+    const [actualizar, setActu] = useState(false)
     useEffect(() => {
         const obtenerDatosUsuario = async () => {
           const token = localStorage.getItem('token');
@@ -29,7 +30,7 @@ function MisReservas (){
           }).catch(error => {
             console.error('Error al obtener las tarjetas:', error);
           })
-    },[reservas])
+    },[actualizar])
 
     const handleBorrar = async (id) => {
         console.log('borrar')
@@ -46,7 +47,7 @@ function MisReservas (){
           });
       
           if (respuesta.ok) {
-            console.log('reserva borrada')
+            setActu[!actualizar]
           } else {
             console.error('Respuesta de error del servidor: ' + respuesta.status);
           }
