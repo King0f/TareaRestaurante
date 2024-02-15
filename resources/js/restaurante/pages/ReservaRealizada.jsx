@@ -1,10 +1,14 @@
 import React from "react";
 import { Link, useLocation } from 'react-router-dom';
+import { Header2 } from "../components/Header2";
+import { Footer } from "../components/Footer";
 
 function ReservaRealizada() {
     const isLoggedIn = !!localStorage.getItem('token');
   
     return (
+      <>
+      <Header2/>
       (isLoggedIn ? (
         <div>
         <h1>Reserva realizada con exito</h1>
@@ -19,6 +23,8 @@ function ReservaRealizada() {
       ) : (
         <div>Hola</div>
       ))
+      <Footer/>
+      </>
     )
 }
 
