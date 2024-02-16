@@ -12,7 +12,7 @@ export const Header = ({}) => {
   const isLoggedIn = !!localStorage.getItem('token');
   const cerrarSesion = () => {
     localStorage.removeItem('token');
-    window.location.reload();
+    window.location.href = '/restaurante/';
   }
   return (
     <>
