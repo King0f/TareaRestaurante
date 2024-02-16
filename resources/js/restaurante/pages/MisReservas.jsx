@@ -55,25 +55,43 @@ function MisReservas (){
     }
  return (
   <>
-  <Header2/>
-  <div className="min-h-screen bg-gray-100 flex flex-col items-center pt-8">
-    <h1 className="text-2xl font-bold text-gray-800 mb-4">Todas las reservas del usuario</h1>
-    <div className="w-full max-w-4xl px-4">
-      {reservas?.map((reserva) => (
-        <div key={reserva.id} className="bg-white shadow-md rounded-lg p-4 mb-4">
-          <p className="font-semibold text-gray-700">Id de la reserva: <span className="font-normal">{reserva.id}</span></p>
-          <p className="font-semibold text-gray-700">Fecha: <span className="font-normal">{reserva.Fecha}</span></p>
-          <p className="font-semibold text-gray-700">Hora: <span className="font-normal">{reserva.Hora}</span></p>
-          <p className="font-semibold text-gray-700">Número de comensales: <span className="font-normal">{reserva.Nº_Personas}</span></p>
-          <p className="font-semibold text-gray-700">Número de mesa para su reserva: <span className="font-normal">{reserva.id_mesa}</span></p>
-          <p className="font-semibold text-gray-700">Menú seleccionado: <span className="font-normal">{reserva.id_menu === 1 ? "Menú 1" : "Menú 2"}</span></p>
-          <button className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => handleBorrar(reserva.id)}>Borrar la reserva</button>
-        </div>
-      ))}
+    <Header2/>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center pt-8">
+      <h1 className="text-3xl font-bold text-gray-800 mb-8">Todas las reservas del usuario</h1>
+      <div className="w-full max-w-4xl px-4">
+        {reservas?.map((reserva) => (
+          <div key={reserva.id} className="bg-white shadow-md rounded-lg p-6 mb-6 text-center">
+            <div className="mb-4">
+              <p className="text-xl font-semibold text-gray-800">Id de la reserva:</p>
+              <p className="text-lg text-gray-600">{reserva.id}</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-xl font-semibold text-gray-800">Fecha:</p>
+              <p className="text-lg text-gray-600">{reserva.Fecha}</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-xl font-semibold text-gray-800">Hora:</p>
+              <p className="text-lg text-gray-600">{reserva.Hora}</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-xl font-semibold text-gray-800">Número de comensales:</p>
+              <p className="text-lg text-gray-600">{reserva.Nº_Personas}</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-xl font-semibold text-gray-800">Número de mesa para su reserva:</p>
+              <p className="text-lg text-gray-600">{reserva.id_mesa}</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-xl font-semibold text-gray-800">Menú seleccionado:</p>
+              <p className="text-lg text-gray-600">{reserva.id_menu === 1 ? "Menú 1" : "Menú 2"}</p>
+            </div>
+            <button className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => handleBorrar(reserva.id)}>Borrar la reserva</button>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-  <Footer/>
-</>
+    <Footer/>
+  </>
  )
 }
 export default MisReservas;
