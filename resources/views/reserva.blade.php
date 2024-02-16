@@ -33,7 +33,7 @@
                 No proporcionado
             @endif
         </li>
-        <li style="margin-bottom: 10px; text-align: center;"><b>Mesa seleccionada para su comida:</b> {{ $reserva['id_mesa'] }}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Mesa seleccionada para su comida:</b> Mesa Nº{{ $reserva['id_mesa'] }}</li>
         <li style="margin-bottom: 10px; text-align: center;"><b>Número de tarjeta: </b>{{ $reserva['Nº_Tarjeta'] }}</li>
     </ul>
     <h2 style="color: #4A90E2; text-align: center;">Datos del usuario:</h2>
@@ -45,6 +45,6 @@
         <li style="margin-bottom: 10px; text-align: center;"><b>Alergias: </b>{{ $informacionAdicional['alergias'] ?? 'No proporcionado' }}</li>
     </ul>
     
-    <p style="font-style: italic; text-align: center;">Gracias por tu reserva. Nos vemos pronto.</p>
+    <p style="font-style: italic; text-align: center;"><b>Gracias por tu reserva. Nos vemos pronto.</b></p>
 </body>
 </html>
