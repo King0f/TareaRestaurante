@@ -9,7 +9,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <footer className="bg-black p-4 opacity-90 text-white text-center fixed inset-x-0 bottom-0">
+    <footer className="bg-black p-4 opacity-90 text-white text-center">
       Página creada por Nicolás Gómez Mulero
     </footer>
   )
