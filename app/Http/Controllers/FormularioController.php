@@ -160,10 +160,9 @@ public function procesarReservaUnlogged(Request $request)
         'alergias' => $request->input('alergias')
     ];
 
-
-    Mail::to($request->input('email'))->send(new ReservaMail($reserva, $informacionAdicional));
     $reserva->save();
-
+    Mail::to($request->input('email'))->send(new ReservaMail($reserva, $informacionAdicional));
+    
     return response()->json($reserva);
 }
 }

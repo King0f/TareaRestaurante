@@ -16,7 +16,7 @@
         <li>Nombre: {{ $informacionAdicional['nombre'] ?? 'No proporcionado' }}</li>
         <li>Apellidos: {{ $informacionAdicional['apellidos'] ?? 'No proporcionado'}}</li>
         <li>Email: {{ $informacionAdicional['email'] ?? 'No proporcionado' }}</li>
-        <li>Reserva id: {{ $reserva->id }}</li>
+        <li>Reserva id: {{ $reserva['id'] }}</li>
 
     </ul>
     <p>Gracias por tu reserva. Nos vemos pronto.</p>
