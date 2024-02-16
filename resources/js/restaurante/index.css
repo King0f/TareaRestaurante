@@ -74,3 +74,27 @@ a:hover {
 .nav-link:hover::after {
   transform: scaleX(1);
 }
+/* CustomStyles.css */
+
+/* Cambiar el color de fondo de cada día */
+.fc-daygrid-day {
+  background-color: #f0f0f0;
+}
+
+/* Cambiar el color y el estilo del texto de los eventos */
+.fc-event-title {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Cambiar el color de fondo de los eventos */
+.fc-event {
+  background-color: #4A90E2;
+  border-color: #4A90E2;
+}
+
+/* Cambiar el estilo de los números de los días */
+.fc-daygrid-day-number {
+  color: #333;
+  font-weight: bold;
+}

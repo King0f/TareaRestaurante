@@ -13,7 +13,7 @@ function Calenndar() {
     useEffect(() => {
         fetchEvents().then((events) => {
             const formattedEvents = events.map((event) => ({
-                title: event.Horas_Disponibles, 
+                title: 'Reserva disponible a las ' + event.Horas_Disponibles + ' horas', 
                 start: event.Dias_Disponibles,
             }));
 
