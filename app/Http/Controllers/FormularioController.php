@@ -152,8 +152,16 @@ public function procesarReservaUnlogged(Request $request)
     $reserva->id_mesa = $mesa_id;
     $reserva->id_horario = $horario_id;
 
+    $informacionAdicional = [
+        'nombre' => $request->input('nombre'),
+        'apellidos' => $request->input('apellidos'),
+        'email' => $request->input('email'),
+        'telefono' => $request->input('telefono'),
+        'alergias' => $request->input('alergias')
+    ];
 
-    // Guarda la reserva en la base de datos
+
+    Mail::to($request->input('email'))->send(new ReservaMail($reserva,$informacionAdicional));
     $reserva->save();
 
     return response()->json($reserva);

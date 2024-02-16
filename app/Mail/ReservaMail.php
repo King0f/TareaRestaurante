@@ -14,9 +14,11 @@ class ReservaMail extends Mailable
     use Queueable, SerializesModels;
 
     public $reserva;
-    public function __construct($reserva)
+    protected $informacionAdicional;
+    public function __construct($reserva, $informacionAdicional)
     {
         $this->reserva = $reserva;
+        $this->informacionAdicional = $informacionAdicional;
     }
 
     /**
