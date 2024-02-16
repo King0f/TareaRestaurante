@@ -4,7 +4,7 @@ import { FaTwitter, FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa
 export const Footer = () => {
   return (
     <footer className="bg-black p-8 opacity-95 text-white text-center">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4">
+      <div className="max-w-4xl mx-auto flex items-center space-y-4">
         <div className="flex justify-center space-x-4">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
             <FaTwitter size="24" />
