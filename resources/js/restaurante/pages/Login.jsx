@@ -63,7 +63,7 @@ function Login() {
            navigate('/restaurante'); 
         }
       })
-      .catch(err => console.log(err),setError(err.message)); // Actualiza el estado del mensaje de error aquí);
+      .catch(err => setError(err.message)); // Actualiza el estado del mensaje de error aquí);
   };
 
   return (
