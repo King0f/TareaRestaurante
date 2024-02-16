@@ -9,7 +9,7 @@
 <body>
     <!-- Cuerpo del correo electronico que se mandara -->
     <h2>Confirmación de Reserva</h2>
-    <p>Confirmación de reserva para el día: {{ $reserva['fecha'] }} a las {{ $reserva['hora'] }}</p>
+    <p>Confirmación de reserva para el día: {{ $reserva['Fecha'] }} a las {{ $reserva['Hora'] }}</p>
     <p>Detalles de la reserva:</p>
     <h2>Datos del usuario:</h2>
     <ul>
