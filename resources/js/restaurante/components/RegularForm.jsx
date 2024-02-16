@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 function RegularForm(props) {
 const [n_personas, setPersonas] = useState();
@@ -11,6 +12,7 @@ const [alergias, setAlergias] = useState();
 const [n_tarjeta, setNTarjeta] = useState();
 const [fecha_caducidad, setFechaCaducidad] = useState();
 const [cvv, setCvv] = useState();
+const navigate = useNavigate();
 const handleSubmit = async (e) => {
   e.preventDefault(); 
   try {
