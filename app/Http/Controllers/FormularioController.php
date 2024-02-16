@@ -95,13 +95,21 @@ class FormularioController extends Controller
 {
     $user = $request->user();
     $reserva = new Reserva();
-    $reserva->Fecha = $request->input('fecha'); 
-    $reserva->Hora = $request->input('hora'); 
-    $reserva->Nº_Personas = $request->input('n_personas');
-    $tarjeta_id = $request->input('tarjeta');
+    $validated = $request->validate([
+        'fecha' => 'required|date',
+        'hora' => 'required',
+        'n_personas' => 'required|integer|min:1',
+        'tarjeta' => 'required',
+        'menu' => 'required', 
+    ]);
+    $reserva->Fecha = $validated['fecha'];
+    $reserva->Hora = $validated['hora'];
+    $reserva->Nº_Personas = $validated['n_personas'];
+
+   
 
     // Asegúrate de reemplazar 'id' con el nombre real del campo en tu modelo de tarjeta
-    $tarjeta = Tarjeta::find($tarjeta_id);
+    $tarjeta = Tarjeta::find($validated['tarjeta']);
 
     // Verifica si la tarjeta existe
     if ($tarjeta) {
