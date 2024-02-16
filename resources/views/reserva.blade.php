@@ -12,12 +12,12 @@
         <p style="text-align: center;">Su reserva ha sido realizada con éxito. Por favor, compruebe todos sus datos personales y de la reserva.</p>
         <h2 style="color: #4A90E2; text-align: center;">Datos de la reserva:</h2>
         <ul style="list-style-type: none; padding: 0;">
-            <li style="margin-bottom: 10px; text-align: center;">Número de reserva: {{ $reserva['id'] }}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Día de la reserva: {{ $reserva['Fecha']}}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Hora de la reserva: {{ $reserva['Hora']}}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Número de personas: {{ $reserva['Nº_Personas'] }}</li>
+            <li style="margin-bottom: 10px; text-align: center;"><b>Número de reserva:</b> {{ $reserva['id'] }}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Día de la reserva: </b>{{ $reserva['Fecha']}}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Hora de la reserva: </b>{{ $reserva['Hora']}}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Número de personas: </b>{{ $reserva['Nº_Personas'] }}</li>
         <li style="margin-bottom: 10px; text-align: center;">
-            Menú seleccionado para los comensales: 
+            <b>Menú seleccionado para los comensales: </b>
             @if(isset($reserva['id_menu']))
                 @switch($reserva['id_menu'])
                     @case(1)
@@ -33,16 +33,16 @@
                 No proporcionado
             @endif
         </li>
-        <li style="margin-bottom: 10px; text-align: center;">Mesa seleccionada para su comida: {{ $reserva['id_mesa'] }}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Número de tarjeta: {{ $reserva['Nº_Tarjeta'] }}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Mesa seleccionada para su comida:</b> {{ $reserva['id_mesa'] }}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Número de tarjeta: </b>{{ $reserva['Nº_Tarjeta'] }}</li>
     </ul>
     <h2 style="color: #4A90E2; text-align: center;">Datos del usuario:</h2>
         <ul style="list-style-type: none; padding: 0;">
-            <li style="margin-bottom: 10px; text-align: center;">Nombre: {{ $informacionAdicional['nombre'] ?? 'No proporcionado' }}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Apellidos: {{ $informacionAdicional['apellidos'] ?? 'No proporcionado'}}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Teléfono: {{ $informacionAdicional['telefono'] ?? 'No proporcionado' }}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Email: {{ $informacionAdicional['email'] ?? 'No proporcionado' }}</li>
-        <li style="margin-bottom: 10px; text-align: center;">Alergias: {{ $informacionAdicional['alergias'] ?? 'No proporcionado' }}</li>
+            <li style="margin-bottom: 10px; text-align: center;"><b>Nombre: </b>{{ $informacionAdicional['nombre'] ?? 'No proporcionado' }}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Apellidos: </b>{{ $informacionAdicional['apellidos'] ?? 'No proporcionado'}}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Teléfono: </b>{{ $informacionAdicional['telefono'] ?? 'No proporcionado' }}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Email: </b>{{ $informacionAdicional['email'] ?? 'No proporcionado' }}</li>
+        <li style="margin-bottom: 10px; text-align: center;"><b>Alergias: </b>{{ $informacionAdicional['alergias'] ?? 'No proporcionado' }}</li>
     </ul>
     
     <p style="font-style: italic; text-align: center;">Gracias por tu reserva. Nos vemos pronto.</p>
