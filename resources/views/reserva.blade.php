@@ -13,9 +13,9 @@
     <p>Detalles de la reserva:</p>
     <h2>Datos del usuario:</h2>
     <ul>
-        <li>Nombre: {{ $informacionAdicional['nombre'] }}</li>
-        <li>Apellidos: {{ $informacionAdicional['apellido'] }}</li>
-        <li>Email: {{ $informacionAdicional['email'] }}</li>
+        <li>Nombre: {{ $informacionAdicional['nombre'] ?? 'No proporcionado' }}</li>
+        <li>Apellidos: {{ $informacionAdicional['apellido'] ?? 'No proporcionado'}}</li>
+        <li>Email: {{ $informacionAdicional['email'] ?? 'No proporcionado' }}</li>
         <li>Reserva id: {{ $reserva['id'] }}</li>
 
     </ul>

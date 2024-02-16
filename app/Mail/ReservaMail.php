@@ -62,6 +62,10 @@ class ReservaMail extends Mailable
     {
         return $this->from(config('mail.from.address'), config('mail.from.name'))
             ->subject('Confirmación de Reserva')
-            ->view('reserva');  
+            ->view('reserva')
+            ->with([
+                'reserva' => $this->reserva,
+                'informacionAdicional' => $this->informacionAdicional, // Asegúrate de pasar la variable
+            ]);;  
     }
 }

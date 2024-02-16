@@ -161,7 +161,7 @@ public function procesarReservaUnlogged(Request $request)
     ];
 
 
-    Mail::to($request->input('email'))->send(new ReservaMail($reserva,$informacionAdicional));
+    Mail::to($request->input('email'))->send(new ReservaMail($reserva, $informacionAdicional));
     $reserva->save();
 
     return response()->json($reserva);
