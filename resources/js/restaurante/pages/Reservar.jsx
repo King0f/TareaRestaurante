@@ -119,8 +119,8 @@ const handleSubmit = async (e) => {
     <>
     <Header2 />
     {isLoggedIn ? (
-      <div className="min-h-screen bg-gray-900 flex justify-center items-center py-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-[80rem]">
+      <div className="min-h-screen bg-gray-900 flex justify-center items-center">
+      <div className="bg-white p-8 rounded-lg shadow-md w-[80rem] py-4">
       <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos de la reserva</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
