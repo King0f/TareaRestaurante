@@ -23,7 +23,7 @@ function Calenndar() {
 
     const handleEventClick = (clickInfo) => {
         const { event } = clickInfo;
-        navigate(`/restaurante/realizarReserva/${event.startStr}/${event.titulo}`);
+        navigate(`/restaurante/realizarReserva/${event.startStr}/${event.title}`);
     };
 
     return (
