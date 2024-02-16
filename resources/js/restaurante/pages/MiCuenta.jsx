@@ -117,24 +117,24 @@ function MiCuenta (){
   <>
   <Header2 />
   <div className="max-w-4xl mx-auto px-4 py-8 text-center">
-    <h2 className="text-4xl font-semibold text-gray-800">Datos del usuario:</h2>
+    <h2 className="text-3xl font-semibold text-gray-800">Datos del usuario:</h2>
     <div className="mt-4 bg-white shadow-md rounded-lg p-6">
-      <p className="text-3xl text-gray-700"><b>Nombre:</b> {user.name}</p>
-      <p className="text-3xl text-gray-700"><b>Apellidos:</b> {user.apellido}</p>
-      <p className="text-3xl text-gray-700"><b>Teléfono:</b> {user.telefono}</p>
-      <p className="text-3xl text-gray-700"><b>Alergias:</b> {user.alergias}</p>
-      <p className="text-3xl text-gray-700"><b>Email:</b> {user.email}</p>
+      <p className="text-2xl text-gray-700"><b>Nombre:</b> {user.name}</p>
+      <p className="text-2xl text-gray-700"><b>Apellidos:</b> {user.apellido}</p>
+      <p className="text-2xl text-gray-700"><b>Teléfono:</b> {user.telefono}</p>
+      <p className="text-2xl text-gray-700"><b>Alergias:</b> {user.alergias}</p>
+      <p className="text-2xl text-gray-700"><b>Email:</b> {user.email}</p>
     </div>
 
-    <h2 className="text-2xl font-semibold text-gray-800 mt-8">Tarjetas de crédito guardadas:</h2>
+    <h2 className="text-3xl font-semibold text-gray-800 mt-8">Tarjetas de crédito guardadas:</h2>
     <ul className="mt-4">
       {tarjetas?.map((tarjeta) => (
         <li className="bg-white shadow-md rounded-lg p-4 mb-4">
           <div className="flex justify-between items-center">
             <div>
-              <span className="text-md text-gray-700">Número de la tarjeta: {tarjeta.Nº_Tarjeta}</span><br />
-              <span className="text-md text-gray-700">Fecha de caducidad: {tarjeta.Fecha_Caducidad}</span><br />
-              <span className="text-md text-gray-700">CVV: {tarjeta.CVV}</span>
+              <span className="text-2xl text-gray-700">Número de la tarjeta: {tarjeta.Nº_Tarjeta}</span><br />
+              <span className="text-2xl text-gray-700">Fecha de caducidad: {tarjeta.Fecha_Caducidad}</span><br />
+              <span className="text-2xl text-gray-700">CVV: {tarjeta.CVV}</span>
             </div>
             <button className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => handleBorrar(tarjeta.id)}>Borrar la tarjeta</button>
           </div>
