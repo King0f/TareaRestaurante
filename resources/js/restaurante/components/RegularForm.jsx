@@ -15,7 +15,7 @@ const handleSubmit = async (e) => {
   e.preventDefault(); 
   const token = localStorage.getItem('token');
   try {
-    const respuesta = await fetch('/api/procesarReservaLogged', {
+    const respuesta = await fetch('/api/procesarReservaUnlogged', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const handleSubmit = async (e) => {
       <div className="min-h-screen bg-gray-900 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-[80rem]">
       <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos de la reserva</h2>
-        <form>
+      <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="fecha" className="block text-gray-700 text-sm font-bold mb-2">
               Dia de la reserva:

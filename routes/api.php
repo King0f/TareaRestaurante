@@ -38,3 +38,4 @@ Route::get('/obtenerReservasUsuario', [ReservasController::class, 'mostrarReserv
 Route::post('/borrarReserva', [ReservasController::class, 'borrarReserva'])->middleware('auth:sanctum');
 Route::post('/addTarjeta', [MiCuentaController::class, 'guardarTarjeta'])->middleware('auth:sanctum');
 Route::post('/borrarTarjeta', [MiCuentaController::class, 'borrarTarjeta']);
+Route::post('/procesarReservaUnlogged', [FormularioController::class, 'procesarReservaUnlogged'])->middleware('auth:sanctum');

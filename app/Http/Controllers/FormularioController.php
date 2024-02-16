@@ -130,4 +130,32 @@ class FormularioController extends Controller
 
     return response()->json($reserva);
 }
+public function procesarReservaUnlogged(Request $request)
+{
+    $reserva = new Reserva();
+    $reserva->Fecha = $request->input('fecha'); 
+    $reserva->Hora = $request->input('hora'); 
+    $reserva->Nº_Personas = $request->input('n_personas');
+    $reserva->Nº_Tarjeta = $request->input('n_tarjeta');
+    $reserva->Fecha_Caducidad = $request->input('fecha_caducidad'); 
+    $reserva->CVV = $request->input('cvv');
+    $reserva->Estado = 'Ocupado'; 
+
+    $cliente_id = 'No Registrado'; 
+    $menu_id = Menu::where('Nombre', $request->input('menu'))->value('id');;
+    $mesa_id = $request->input('n_personas') > 4 ? Mesa::where('Capacidad', 8)->value('id') : Mesa::where('Capacidad', 4)->value('id');
+    $horario_id = Horario::where('Dias_Disponibles', $request->input('fecha'))->where('Horas_Disponibles', $request->input('hora'))->value('id');;
+
+    // Asigna los IDs a la reserva
+    $reserva->id_cliente = $cliente_id;
+    $reserva->id_menu = $menu_id;
+    $reserva->id_mesa = $mesa_id;
+    $reserva->id_horario = $horario_id;
+
+
+    // Guarda la reserva en la base de datos
+    $reserva->save();
+
+    return response()->json($reserva);
+}
 }
