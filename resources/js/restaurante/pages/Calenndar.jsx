@@ -15,6 +15,7 @@ function Calenndar() {
             const formattedEvents = events.map((event) => ({
                 title: 'Reserva a las ' + event.Horas_Disponibles +' horas', 
                 start: event.Dias_Disponibles,
+                hora: event.Horas_Disponibles,
             }));
 
             setEvents(formattedEvents);
@@ -23,7 +24,8 @@ function Calenndar() {
 
     const handleEventClick = (clickInfo) => {
         const { event } = clickInfo;
-        navigate(`/restaurante/realizarReserva/${event.startStr}/${event.title}`);
+        const hora = event.extendedProps.hora; 
+        navigate(`/restaurante/realizarReserva/${event.startStr}/${hora}`);
     };
 
     return (
