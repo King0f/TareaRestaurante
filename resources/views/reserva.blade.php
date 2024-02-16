@@ -7,7 +7,7 @@
     <title>Confirmación de Reserva</title>
 </head>
 <body style="font-family: Arial, sans-serif; color: #333; margin: 0; padding: 0; background-color: #f4f4f4;">
-    <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <div style="max-width: 800px; margin: auto; background-color: #ffffff; padding: 20px; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
         <h2 style="color: #4A90E2; text-align: center;">Confirmación de Reserva</h2>
         <p style="text-align: center;">Su reserva ha sido realizada con éxito. Por favor, compruebe todos sus datos personales y de la reserva.</p>
         <h2 style="color: #4A90E2; text-align: center;">Datos de la reserva:</h2>
