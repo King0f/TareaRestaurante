@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="bg-black p-8 opacity-95 text-white text-center">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4">
-        <div>
+        <div className='text-center'>
           Página creada por Nicolás Gómez Mulero
         </div>
         <div className="flex justify-center space-x-4">
