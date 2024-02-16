@@ -13,13 +13,11 @@ const [fecha_caducidad, setFechaCaducidad] = useState();
 const [cvv, setCvv] = useState();
 const handleSubmit = async (e) => {
   e.preventDefault(); 
-  const token = localStorage.getItem('token');
   try {
     const respuesta = await fetch('/api/procesarReservaUnlogged', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify({
         fecha: props.fecha,
