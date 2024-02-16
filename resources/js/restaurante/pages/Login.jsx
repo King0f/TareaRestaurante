@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {Header2} from "../components/Header2"
-import {Footer} from "../components/Header2"
+import {Footer} from "../components/Footer"
 
 function Login() {
   /* La línea usa el gancho `useState` en React para crear una variable de estado llamada `formData` y una función
