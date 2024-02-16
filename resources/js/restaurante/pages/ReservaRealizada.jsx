@@ -22,7 +22,11 @@ function ReservaRealizada() {
           <button className="text-black" onClick={volverAlInicio}>Volver al inicio</button>
        </div> 
       ) : (
-        <div>Hola</div>
+        <div>
+        <h1>Reserva realizada con exito</h1>
+        <h2>Compruebe su bandeja de entrada en el correo para comprobar todos los datos de la reserva</h2>
+        <button className="text-black" onClick={volverAlInicio}>Volver al inicio</button>
+       </div> 
       )}
       <Footer/>
       </>
