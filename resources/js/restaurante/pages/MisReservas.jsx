@@ -54,22 +54,26 @@ function MisReservas (){
           }
     }
  return (
-    <>
-    <Header2/>
-    {reservas?.map((reserva) => (
-        <>
-                <p>Id de la reserva: {reserva.id}</p>
-                <p>Fecha: {reserva.Fecha}</p>
-                <p>Hora: {reserva.Hora}</p>
-                <p>Número de comensales: {reserva.Nº_Personas}</p>
-                <p>Número de mesa para su reserva: {reserva.id_mesa}</p>
-                <p>Menu seleccionado: {reserva.id_menu === 1 ? "Menu 1" : "Menu 2"}</p>
-                <button className="text-black" onClick={() => handleBorrar(reserva.id)}>Borrar la reserva</button>
-
-        </>
-              ))}
-    <Footer/>
-    </>
+  <>
+  <Header2/>
+  <div className="min-h-screen bg-gray-100 flex flex-col items-center pt-8">
+    <h1 className="text-2xl font-bold text-gray-800 mb-4">Todas las reservas del usuario</h1>
+    <div className="w-full max-w-4xl px-4">
+      {reservas?.map((reserva) => (
+        <div key={reserva.id} className="bg-white shadow-md rounded-lg p-4 mb-4">
+          <p className="font-semibold text-gray-700">Id de la reserva: <span className="font-normal">{reserva.id}</span></p>
+          <p className="font-semibold text-gray-700">Fecha: <span className="font-normal">{reserva.Fecha}</span></p>
+          <p className="font-semibold text-gray-700">Hora: <span className="font-normal">{reserva.Hora}</span></p>
+          <p className="font-semibold text-gray-700">Número de comensales: <span className="font-normal">{reserva.Nº_Personas}</span></p>
+          <p className="font-semibold text-gray-700">Número de mesa para su reserva: <span className="font-normal">{reserva.id_mesa}</span></p>
+          <p className="font-semibold text-gray-700">Menú seleccionado: <span className="font-normal">{reserva.id_menu === 1 ? "Menú 1" : "Menú 2"}</span></p>
+          <button className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => handleBorrar(reserva.id)}>Borrar la reserva</button>
+        </div>
+      ))}
+    </div>
+  </div>
+  <Footer/>
+</>
  )
 }
 export default MisReservas;
