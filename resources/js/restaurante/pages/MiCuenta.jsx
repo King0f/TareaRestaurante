@@ -114,81 +114,87 @@ function MiCuenta (){
         return <p>Cargando detalles del usuario...</p>;
       }
  return (
-    <>
-    <Header2/>
-    <h2>Datos del usuario:</h2>
-    <p><b>Nombre:</b> {user.name}</p>
-    <p><b>Apellidos:</b> {user.apellido}</p>
-    <p><b>Teléfono:</b> {user.telefono}</p>
-    <p><b>Alergias:</b> {user.alergias}</p>
-    <p><b>Email:</b> {user.email}</p>
-    <h2>Tarjetas de credito guardadas:</h2>
-    <ul>
-    {tarjetas?.map((tarjeta) => (
-        <>
-        <li>
-                <span>Número de la tarjeta: {tarjeta.Nº_Tarjeta}</span>
-                <span>Fecha de caducidad: {tarjeta.Fecha_Caducidad}</span>
-                <span>CVV: {tarjeta.CVV}</span>
-                <button className="text-black" onClick={() => handleBorrar(tarjeta.id)}>Borrar la tarjeta</button>
+  <>
+  <Header2 />
+  <div className="max-w-4xl mx-auto px-4 py-8">
+    <h2 className="text-2xl font-semibold text-gray-800">Datos del usuario:</h2>
+    <div className="mt-4 bg-white shadow-md rounded-lg p-6">
+      <p className="text-md text-gray-700"><b>Nombre:</b> {user.name}</p>
+      <p className="text-md text-gray-700"><b>Apellidos:</b> {user.apellido}</p>
+      <p className="text-md text-gray-700"><b>Teléfono:</b> {user.telefono}</p>
+      <p className="text-md text-gray-700"><b>Alergias:</b> {user.alergias}</p>
+      <p className="text-md text-gray-700"><b>Email:</b> {user.email}</p>
+    </div>
+
+    <h2 className="text-2xl font-semibold text-gray-800 mt-8">Tarjetas de crédito guardadas:</h2>
+    <ul className="mt-4">
+      {tarjetas?.map((tarjeta) => (
+        <li className="bg-white shadow-md rounded-lg p-4 mb-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <span className="text-md text-gray-700">Número de la tarjeta: {tarjeta.Nº_Tarjeta}</span><br />
+              <span className="text-md text-gray-700">Fecha de caducidad: {tarjeta.Fecha_Caducidad}</span><br />
+              <span className="text-md text-gray-700">CVV: {tarjeta.CVV}</span>
+            </div>
+            <button className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => handleBorrar(tarjeta.id)}>Borrar la tarjeta</button>
+          </div>
         </li>
-        
-        </>
-              ))}
+      ))}
     </ul>
-    <button onClick={toggleFormulario} className="text-black">
-                Añadir tarjeta a la cuenta
+    <button onClick={toggleFormulario} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">
+      Añadir tarjeta a la cuenta
     </button>
     {mostrarFormulario && (
-                <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                     <label htmlFor="Nº_Tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
-                       Nº de la tarjeta:
-                     </label>
-                     <input
-                       type="text"
-                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       id="Nº_Tarjeta"
-                       name="Nº_Tarjeta"
-                       placeholder= "Inserte el número de la tarjeta"
-                       onChange={(e) => setNTarjeta(e.target.value)}
-                     />
-                   </div>
-                   <div className="mb-4">
-                     <label htmlFor="Fecha_Caducidad" className="block text-gray-700 text-sm font-bold mb-2">
-                       Fecha de caducidad:
-                     </label>
-                     <input
-                       type="text"
-                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       id="Fecha_Caducidad"
-                       name="Fecha_Caducidad"
-                       placeholder= "Inserte el número de la tarjeta"
-                       onChange={(e) => setFechaCaducidad(e.target.value)}
-                     />
-                   </div>
-                   <div className="mb-4">
-                     <label htmlFor="CVV" className="block text-gray-700 text-sm font-bold mb-2">
-                       CVV:
-                     </label>
-                     <input
-                       type="text"
-                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       id="CVV"
-                       name="CVV"
-                       placeholder= "Inserte el número de la tarjeta"
-                       onChange={(e) => setCvv(e.target.value)}
-                     />
-                   </div>
-                   <div className="flex items-center justify-between">
-                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                       Añadir Tarjeta
-                     </button>
-                   </div>
-                 </form>
-            )}
-    <Footer/>
-    </>
+      <form onSubmit={handleSubmit} className="mt-6 bg-white shadow-md rounded-lg p-6">
+        <div className="mb-4">
+          <label htmlFor="Nº_Tarjeta" className="block text-gray-700 text-sm font-bold mb-2">
+            Nº de la tarjeta:
+          </label>
+          <input
+            type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="Nº_Tarjeta"
+            name="Nº_Tarjeta"
+            placeholder="Inserte el número de la tarjeta"
+            onChange={(e) => setNTarjeta(e.target.value)}
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="Fecha_Caducidad" className="block text-gray-700 text-sm font-bold mb-2">
+            Fecha de caducidad:
+          </label>
+          <input
+            type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="Fecha_Caducidad"
+            name="Fecha_Caducidad"
+            placeholder="MM/AA"
+            onChange={(e) => setFechaCaducidad(e.target.value)}
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="CVV" className="block text-gray-700 text-sm font-bold mb-2">
+            CVV:
+          </label>
+          <input
+            type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="CVV"
+            name="CVV"
+            placeholder="CVV"
+            onChange={(e) => setCvv(e.target.value)}
+          />
+        </div>
+        <div className="flex items-center justify-between">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Añadir Tarjeta
+          </button>
+        </div>
+      </form>
+    )}
+  </div>
+  <Footer />
+</>
  )
 }
 export default MiCuenta;
