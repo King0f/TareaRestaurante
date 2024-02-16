@@ -141,7 +141,7 @@ public function procesarReservaUnlogged(Request $request)
     $reserva->CVV = $request->input('cvv');
     $reserva->Estado = 'Ocupado'; 
 
-    $cliente_id = 'No Registrado'; 
+    $cliente_id = 0; 
     $menu_id = Menu::where('Nombre', $request->input('menu'))->value('id');;
     $mesa_id = $request->input('n_personas') > 4 ? Mesa::where('Capacidad', 8)->value('id') : Mesa::where('Capacidad', 4)->value('id');
     $horario_id = Horario::where('Dias_Disponibles', $request->input('fecha'))->where('Horas_Disponibles', $request->input('hora'))->value('id');;
