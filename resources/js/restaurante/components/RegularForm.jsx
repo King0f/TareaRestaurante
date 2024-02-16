@@ -105,6 +105,7 @@ const handleSubmit = async (e) => {
               name="Nº_Personas"
               placeholder= "Inserte el número de personas de la reserva"
               onChange={(e) => setPersonas(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -116,6 +117,7 @@ const handleSubmit = async (e) => {
               id="tarjeta"
               name="tarjeta"
               onChange={(e) => setMenu(e.target.value)}
+              required
             >
               <option value="">Seleccione un menú</option>
               <option value="menu1">Menu 1 - Sensaciones encontradas - 75€</option>
@@ -134,6 +136,7 @@ const handleSubmit = async (e) => {
               name="nombre"
               placeholder= "Inserte su nombre"
               onChange={(e) => setNombre(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -147,6 +150,7 @@ const handleSubmit = async (e) => {
               name="apellido"
               placeholder= "Inserte sus apellidos"
               onChange={(e) => setApellidos(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -160,6 +164,7 @@ const handleSubmit = async (e) => {
               name="email"
               placeholder= "Inserte su email"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -173,6 +178,7 @@ const handleSubmit = async (e) => {
               name="telefono"
               placeholder= "Inserte su telefono"
               onChange={(e) => setTelefono(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -186,6 +192,7 @@ const handleSubmit = async (e) => {
               name="alergias"
               placeholder= "Desarrolle aqui si tiene alguna alergia"
               onChange={(e) => setAlergias(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -199,6 +206,7 @@ const handleSubmit = async (e) => {
               name="N_Tarjeta"
               placeholder= "Inserte el número de su tarjeta"
               onChange={(e) => setNTarjeta(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -212,6 +220,7 @@ const handleSubmit = async (e) => {
               name="Fecha_Caducidad"
               placeholder= "Inserte la fecha de caducidad de la tarjeta introducida"
               onChange={(e) => setFechaCaducidad(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -225,6 +234,7 @@ const handleSubmit = async (e) => {
               name="CVV"
               placeholder= "Inserte EL CVV de la tarjeta introducida"
               onChange={(e) => setCvv(e.target.value)}
+              required
             />
           </div>
           <div className="flex items-center justify-between">
