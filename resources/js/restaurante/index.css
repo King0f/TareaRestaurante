@@ -82,7 +82,7 @@ a:hover {
 
 /* Cambiar el color de fondo y el color del texto de los días del calendario */
 .fc-daygrid-day {
-  background-color: #fafafa;
+  background-color: #337ab7;
   color: #333;
 }
 
