@@ -9,6 +9,7 @@ function Login() {
     password: "",
   });
   
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   /**
@@ -49,14 +50,20 @@ function Login() {
     /* El código "fetch(url, opciones)" realiza una solicitud HTTP a la "url" especificada con las
     "opciones" dadas. */
     fetch(url, options)
-      .then(response => response.json())
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Email o contraseña incorrectos'); // Puedes ajustar el mensaje según tu necesidad
+        }
+      })
       .then(resultado => {
         if(resultado.token) {
           localStorage.setItem('token', resultado.token); 
            navigate('/restaurante'); 
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err),setError(err.message)); // Actualiza el estado del mensaje de error aquí);
   };
 
   return (
@@ -86,6 +93,9 @@ function Login() {
                 onChange={handleInputChange}
                 className="w-full px-3 py-2 border bg-gray-700 rounded-md text-white"
               />
+            </div>
+            <div className="mb-4">
+              {error && <div className="text-red-500">{error}</div>}
             </div>
             <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
               Iniciar Sesión
