@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
+import {Header2} from "../components/Header2"
+import {Footer} from "../components/Header2"
+
 
 function Register() {
     /* El código  está usando el Gancho `useState` en React para crear una variable de estado llamada `formData` 
@@ -67,6 +70,7 @@ function Register() {
   
     return (
       <>
+      <Header2/>
         <div className="relative h-screen bg-cover bg-center flex items-center justify-center bg-gray-900">
           <div className="relative z-10 bg-gray-800 bg-opacity-90 p-8 rounded-md shadow-md w-96">
             <h2 className="text-2xl font-bold mb-4 text-white ml-28">Registro</h2>
@@ -146,6 +150,7 @@ function Register() {
             </div>
           </div>
         </div>
+        <Footer/>
       </>
     );
   }
