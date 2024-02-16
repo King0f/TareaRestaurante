@@ -12,7 +12,7 @@ function ReservaRealizada() {
     return (
       <>
         <Header2/>
-        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900 pt-20">
+        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900">
           {isLoggedIn ? (
             <div className="text-center space-y-4">
               <h1 className="text-4xl font-bold text-white">Reserva realizada con éxito</h1>
