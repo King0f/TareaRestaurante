@@ -14,7 +14,7 @@ function ReservaRealizada() {
         <Header2/>
         <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900">
           {isLoggedIn ? (
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-1">
               <h1 className="text-4xl font-bold text-white">Reserva realizada con éxito</h1>
               <h2 className="text-2xl text-gray-300">Compruebe la página de 'Mis Reservas' para comprobar todos los datos de su reserva</h2>
               <Link to={'/restaurante/misReservas'}>
