@@ -31,14 +31,12 @@ function Calenndar() {
     return (
         <>
         <Header2 />
-        <div className='bg-gray-900'>
         <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
             events={events}
             eventClick={handleEventClick} 
         />
-        </div>
         </>
     );
 }
