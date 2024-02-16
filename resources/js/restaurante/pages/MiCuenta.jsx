@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+import { Header2 } from "../components/Header2";
+import { Footer } from "../components/Footer";
 
 function MiCuenta (){
     const [user,setUser] = useState();
@@ -113,7 +115,7 @@ function MiCuenta (){
       }
  return (
     <>
-    <div>Hola</div>
+    <Header2/>
     <h2>Datos del usuario:</h2>
     <p><b>Nombre:</b> {user.name}</p>
     <p><b>Apellidos:</b> {user.apellido}</p>
@@ -185,6 +187,7 @@ function MiCuenta (){
                    </div>
                  </form>
             )}
+    <Footer/>
     </>
  )
 }
