@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 export const ButtonHome = ({onMouseEnter, onMouseLeave, hovered}) => {
   const navigate = useNavigate()
   function handleClick(){
-    navigate('/restaurante/realizarReserva')
+    navigate('/restaurante/calendarioReservas')
   }
   return (
     <button className="botonInicio text-white font-bold py-3 px-6 rounded mt-4 ${hovered ? 'hovered' : ''}"
