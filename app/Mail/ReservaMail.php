@@ -15,7 +15,7 @@ class ReservaMail extends Mailable
 
     public $reserva;
     protected $informacionAdicional;
-    public function __construct($reserva, $informacionAdicional)
+    public function __construct($reserva, $informacionAdicional = null)
     {
         $this->reserva = $reserva;
         $this->informacionAdicional = $informacionAdicional;
