@@ -12,15 +12,17 @@ function ReservaRealizada() {
     return (
       <>
         <Header2/>
-        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900">
+        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900 pt-20">
           {isLoggedIn ? (
-            <div className="text-center">
+            <div className="text-center space-y-4">
               <h1 className="text-4xl font-bold text-white">Reserva realizada con éxito</h1>
               <h2 className="text-2xl text-gray-300">Compruebe la página de 'Mis Reservas' para comprobar todos los datos de su reserva</h2>
-              <Link to={'/restaurante/misReservas'}>
-                <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Mis Reservas</button>
-              </Link>
-              <button className="mt-4 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onClick={volverAlInicio}>Volver al inicio</button>
+              <div>
+                <Link to={'/restaurante/misReservas'}>
+                  <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">Mis Reservas</button>
+                </Link>
+                <button className="mt-4 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onClick={volverAlInicio}>Volver al inicio</button>
+              </div>
             </div> 
           ) : (
             <div className="text-center space-y-4">
