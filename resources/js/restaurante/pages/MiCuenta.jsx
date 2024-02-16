@@ -116,14 +116,14 @@ function MiCuenta (){
  return (
   <>
   <Header2 />
-  <div className="max-w-4xl mx-auto px-4 py-8">
-    <h2 className="text-2xl font-semibold text-gray-800">Datos del usuario:</h2>
+  <div className="max-w-4xl mx-auto px-4 py-8 text-center">
+    <h2 className="text-4xl font-semibold text-gray-800">Datos del usuario:</h2>
     <div className="mt-4 bg-white shadow-md rounded-lg p-6">
-      <p className="text-md text-gray-700"><b>Nombre:</b> {user.name}</p>
-      <p className="text-md text-gray-700"><b>Apellidos:</b> {user.apellido}</p>
-      <p className="text-md text-gray-700"><b>Teléfono:</b> {user.telefono}</p>
-      <p className="text-md text-gray-700"><b>Alergias:</b> {user.alergias}</p>
-      <p className="text-md text-gray-700"><b>Email:</b> {user.email}</p>
+      <p className="text-3xl text-gray-700"><b>Nombre:</b> {user.name}</p>
+      <p className="text-3xl text-gray-700"><b>Apellidos:</b> {user.apellido}</p>
+      <p className="text-3xl text-gray-700"><b>Teléfono:</b> {user.telefono}</p>
+      <p className="text-3xl text-gray-700"><b>Alergias:</b> {user.alergias}</p>
+      <p className="text-3xl text-gray-700"><b>Email:</b> {user.email}</p>
     </div>
 
     <h2 className="text-2xl font-semibold text-gray-800 mt-8">Tarjetas de crédito guardadas:</h2>
