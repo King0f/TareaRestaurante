@@ -80,6 +80,11 @@ a:hover {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.fc .fc-col-header-cell {
+  color: #337ab7; /* Cambia este color al que prefieras */
+  background-color: #f0f0f0; /* Opcional: si deseas cambiar también el fondo */
+  font-weight: bold; /* Opcional: si quieres que el texto sea negrita */
+}
 /* Cambiar el color de fondo y el color del texto de los días del calendario */
 .fc-daygrid-day {
   background-color: #fafafa;
