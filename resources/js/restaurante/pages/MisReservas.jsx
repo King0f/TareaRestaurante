@@ -53,6 +53,13 @@ function MisReservas (){
             console.error('Respuesta de error del servidor: ' + respuesta.status);
           }
     }
+    if (!reservas) {
+      return (
+        <div className="flex justify-center items-center min-h-screen">
+          <h1 className="text-xl font-semibold text-gray-800">No se ha encontrado ninguna reserva</h1>
+        </div>
+      );
+    }
  return (
   <>
     <Header2/>
