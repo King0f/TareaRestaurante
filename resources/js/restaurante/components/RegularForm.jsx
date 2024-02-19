@@ -120,8 +120,8 @@ const handleSubmit = async (e) => {
               required
             >
               <option value="">Seleccione un menú</option>
-              <option value="menu1">Menu 1 - Sensaciones encontradas - 75€</option>
-              <option value="menu2">Menu 2 - Todas las emociones - 150€</option>
+              <option value="menu1">Menú 1 - Sensaciones encontradas - 75€</option>
+              <option value="menu2">Menú 2 - Todas las emociones - 150€</option>
             </select>
           </div>
         <h2 className="text-center text-3xl font-semibold mb-4 text-gray-800 pt-4">Datos del Usuario</h2>
